@@ -132,7 +132,7 @@ a {
 .section-cta {
   color: var(--sage-dark);
   font-size: 0.95rem;
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -177,6 +177,10 @@ a {
 .button.primary {
   background: var(--sage-dark);
   color: var(--cta-text);
+}
+
+.header-cta {
+  font-weight: 550;
 }
 
 .button.secondary {
@@ -775,15 +779,19 @@ p {
 }
 
 .testimonial-track {
+  align-items: stretch;
   display: grid;
   gap: 1rem;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% - 2rem) / 3);
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 0.2rem 0;
+  overscroll-behavior-x: contain;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  touch-action: pan-x;
 }
 
 .testimonial-track::-webkit-scrollbar {
@@ -797,6 +805,7 @@ p {
   min-height: 15rem;
   padding: 1.45rem;
   scroll-snap-align: start;
+  user-select: none;
 }
 
 blockquote {
