@@ -1194,9 +1194,10 @@ address strong {
   }
 
   .hero-media img {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1;
     height: auto;
     min-height: 0;
+    object-position: center 10%;
   }
 
   .provider-summary {
