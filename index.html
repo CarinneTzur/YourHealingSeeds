@@ -414,7 +414,7 @@
         </div>
       </section>
 
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title" style="padding-bottom: 2.2rem;">
+ <section class="section contact-section" id="contact" aria-labelledby="contact-title" style="padding-bottom: 2.2rem;">
         <div class="contact-panel">
           <div>
             <img class="contact-logo" src="assets/your-healing-seeds-logo.jpg" alt="Your Healing Seeds logo">
@@ -426,7 +426,11 @@
           </div>
           <div class="contact-actions">
             <a class="button primary" href="tel:+12108651276">Call 210-865-1276</a>
-            <a class="button secondary" href="https://www.google.com/maps/search/?api=1&query=1109+North+Walnut+Avenue+New+Braunfels+TX+78130" rel="noopener" target="_blank">Get directions</a>
+            <a 
+              class="button secondary"
+              href="#"
+              id="location-directions-btn"
+              >Get directions</a>
           </div>
           <address>
             <strong>Your Healing Seeds</strong>
@@ -434,6 +438,60 @@
             <span>New Braunfels, Texas 78130</span>
           </address>
         </div>
+        <!-- Location selection popup -->
+        <div id="location-popup" style="display:none; position: fixed; top: 0; left:0; width:100vw; height:100vh; background: rgba(0,0,0,0.45); align-items: center; justify-content: center; z-index: 1111;">
+          <div style="background: #fff; padding: 2rem 2.2rem 1.5rem 2.2rem; border-radius: 1rem; max-width: 360px; margin: auto; text-align: center; box-shadow: 0 4px 28px rgba(0,0,0,0.11); position: relative;">
+            <button style="background: none; border: none; font-size: 1.6rem; position: absolute; right: 1rem; top: 0.6rem; color: #555; cursor: pointer;" id="close-location-popup" aria-label="Close popup">&times;</button>
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.25rem;">Choose a location</h3>
+            <p style="font-size: 1rem; color: #222; margin-bottom: 1.4rem;">
+              Which location do you want directions for?
+            </p>
+            <a 
+              class="button primary" 
+              style="display: block; margin-bottom: 0.8rem;"
+              href="https://www.google.com/maps/search/?api=1&query=1109+North+Walnut+Avenue+New+Braunfels+TX+78130" 
+              target="_blank" 
+              rel="noopener"
+              >New Braunfels</a>
+            <a 
+              class="button secondary"
+              style="display: block;"
+              href="https://www.google.com/maps/place/953+E+Kingsbury+St,+Seguin,+TX+78155/@29.5807524,-97.9563731,17z/data=!3m1!4b1!4m6!3m5!1s0x865cb78eb4dc0eef:0xe249cd5877f646a6!8m2!3d29.5807478!4d-97.9537982!16s%2Fg%2F11csfrskcm?entry=ttu&amp;g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" 
+              target="_blank" 
+              rel="noopener"
+              >Seguin</a>
+          </div>
+        </div>
+        <script>
+          // Only one instance of script, will not break on multiple page renders.
+          (function() {
+            const btn = document.getElementById('location-directions-btn');
+            const popup = document.getElementById('location-popup');
+            const close = document.getElementById('close-location-popup');
+            if (btn && popup && close) {
+              btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                popup.style.display = 'flex';
+                popup.focus && popup.focus();
+              });
+              close.addEventListener('click', function() {
+                popup.style.display = 'none';
+              });
+              // Hide on background click
+              popup.addEventListener('click', function(ev) {
+                if (ev.target === popup) {
+                  popup.style.display = 'none';
+                }
+              });
+              // ESC key to close
+              document.addEventListener('keydown', function(e) {
+                if (popup.style.display === 'flex' && e.key === 'Escape') {
+                  popup.style.display = 'none';
+                }
+              });
+            }
+          })();
+        </script>
       </section>
 
       <section class="fine-print" aria-label="Medical note" style="border-top: none; box-shadow: none; padding-top: 3.5rem;">
