@@ -564,11 +564,21 @@ p {
   padding: 1.3rem 0 0 1.05rem;
 }
 
+.injection-card ul {
+  column-gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .about-section {
   align-items: center;
   display: grid;
   gap: clamp(2rem, 5vw, 4rem);
   grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr);
+}
+
+.about-section > .section-kicker {
+  grid-column: 1 / -1;
+  margin-bottom: calc(clamp(2rem, 5vw, 4rem) * -0.55);
 }
 
 .about-image {
@@ -593,6 +603,16 @@ p {
   max-width: 680px;
 }
 
+.partner-note {
+  border-left: 3px solid var(--gold);
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(1.16rem, 1.7vw, 1.34rem) !important;
+  font-weight: 650;
+  line-height: 1.35;
+  padding-left: 1rem;
+}
+
 .credential-list {
   display: flex;
   flex-wrap: wrap;
@@ -608,6 +628,43 @@ p {
   font-size: 0.92rem;
   font-weight: 650;
   padding: 0.58rem 0.78rem;
+}
+
+.education-panel {
+  border-top: 1px solid var(--line);
+  margin-top: 1.7rem;
+  padding-top: 1.35rem;
+}
+
+.education-panel h3 {
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+  font-weight: 720;
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+
+.education-panel dl {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+}
+
+.education-panel div {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+}
+
+.education-panel dt {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.education-panel dd {
+  color: var(--muted);
+  margin: 0;
 }
 
 .visit-section {
@@ -1030,6 +1087,40 @@ address strong {
   padding: 1.25rem clamp(1.25rem, 4vw, 2rem) 3rem;
 }
 
+.medical-oversight {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+  margin-bottom: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.medical-oversight img {
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+}
+
+.medical-oversight .section-kicker {
+  margin-bottom: 0.55rem;
+}
+
+.medical-oversight h2 {
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  margin: 0;
+}
+
+.medical-oversight p {
+  margin-top: 0.75rem;
+}
+
 .fine-print p {
   font-size: 0.88rem;
 }
@@ -1155,6 +1246,14 @@ address strong {
 
   .contact-panel {
     grid-template-columns: 1fr;
+  }
+
+  .medical-oversight {
+    grid-template-columns: 1fr;
+  }
+
+  .medical-oversight img {
+    max-width: 260px;
   }
 
   .faq-intro {
