@@ -27,6 +27,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -451,6 +452,13 @@ main > .trust-bar + section::before {
   max-width: 580px;
 }
 
+.section-helper {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0.85rem 0 0;
+  max-width: 560px;
+}
+
 h2 {
   font-family: var(--display);
   font-size: clamp(1.85rem, 2.7vw, 2.55rem);
@@ -505,6 +513,7 @@ p {
   background: var(--paper);
   border-block: 0;
   max-width: none;
+  padding-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .services-section > .section-header,
@@ -531,11 +540,38 @@ p {
 
 .service-card {
   border-radius: 8px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   min-height: 21rem;
   padding: 1.65rem 1.55rem 1.5rem;
   position: relative;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.service-card::after {
+  align-self: flex-start;
+  color: var(--sage-dark);
+  content: "View details";
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-top: 1.1rem;
+  opacity: 0.72;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.service-card:hover,
+.service-card:focus-visible {
+  border-color: rgba(184, 163, 109, 0.72);
+  box-shadow: 0 18px 42px rgba(21, 21, 21, 0.09);
+  outline: 0;
+  transform: translateY(-2px);
+}
+
+.service-card:hover::after,
+.service-card:focus-visible::after {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 .service-meta {
@@ -569,11 +605,132 @@ p {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
+.service-modal {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 220ms ease;
+  z-index: 80;
+}
+
+.service-modal[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.service-modal__overlay {
+  background: rgba(21, 21, 21, 0.42);
+  inset: 0;
+  position: absolute;
+}
+
+.service-modal__panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 28px 90px rgba(21, 21, 21, 0.22);
+  max-height: min(760px, 88vh);
+  max-width: 760px;
+  overflow: auto;
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+  position: relative;
+  transform: translateY(14px) scale(0.985);
+  transition: transform 260ms ease, opacity 220ms ease;
+  width: min(100%, 760px);
+}
+
+.service-modal[aria-hidden="false"] .service-modal__panel {
+  transform: translateY(0) scale(1);
+}
+
+.service-modal__close {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1.5rem;
+  height: 2.4rem;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 2.4rem;
+}
+
+.service-modal__eyebrow {
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-right: 3rem;
+}
+
+.service-modal h2 {
+  margin: 0.6rem 3rem 1rem 0;
+}
+
+.service-modal__content {
+  color: var(--muted);
+  display: grid;
+  gap: 1rem;
+}
+
+.service-modal__content p,
+.service-modal__content ul {
+  margin: 0;
+}
+
+.service-modal__content ul {
+  display: grid;
+  gap: 0.8rem;
+  padding-left: 1.2rem;
+}
+
+.service-detail-list strong {
+  color: var(--ink);
+}
+
+.service-fun-fact {
+  color: var(--clay);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.service-modal__actions {
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+}
+
 .about-section {
   align-items: center;
   display: grid;
   gap: clamp(2rem, 5vw, 4rem);
   grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr);
+  padding-top: clamp(2.5rem, 4.5vw, 3.6rem);
+}
+
+.section-divider {
+  background: var(--gold);
+  grid-column: 1 / -1;
+  height: 1px;
+  opacity: 0.65;
+  width: min(86%, var(--max));
 }
 
 .about-section > .section-kicker {
@@ -1171,6 +1328,15 @@ address strong {
 
   .reveal {
     opacity: 1;
+    transform: none;
+  }
+
+  .service-modal,
+  .service-modal__panel {
+    transition: none;
+  }
+
+  .service-modal__panel {
     transform: none;
   }
 }

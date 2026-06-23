@@ -2,19 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <!-- The meta viewport tag ensures mobile responsiveness by setting the width and zoom level -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The title of the page as shown in browser tabs and search results -->
     <title>Your Healing Seeds | Holistic Wellness in New Braunfels, TX</title>
+    <!-- The description meta tag improves SEO and gives context about the business to search engines -->
     <meta
       name="description"
       content="Your Healing Seeds offers auriculotherapy, Acudetox, ear candling, holistic aesthetics, vitamin injections, and medical weight-loss guidance in New Braunfels and Seguin."
     >
+    <!-- Preload the main hero image so it appears quicker on first paint -->
     <link rel="preload" href="assets/mandy-wright-clinical.webp" as="image">
-    <link rel="stylesheet" href="styles.css?v=medical-oversight-1">
+    <!-- Main stylesheet for visual layout and custom components -->
+    <link rel="stylesheet" href="styles.css?v=services-spacing-1">
   </head>
   <body>
+    <!-- Skip link for accessibility: allows keyboard users to jump to main content -->
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" aria-label="Primary">
+      <!-- Logo and site brand, acts as a home link -->
       <a class="brand" href="#top" aria-label="Your Healing Seeds home">
         <img class="brand-logo" src="assets/your-healing-seeds-logo.jpg" alt="" aria-hidden="true">
         <span>
@@ -22,16 +29,19 @@
           <small>New Braunfels, TX</small>
         </span>
       </a>
+      <!-- Main navigation links for the website -->
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#about">Meet Mandy</a>
         <a href="#visit">First Visit</a>
         <a href="#faq">FAQ</a>
       </nav>
+      <!-- Header call-to-action for quick phone scheduling -->
       <a class="header-cta" href="tel:+12108651276">Call 210-865-1276</a>
     </header>
 
     <main id="main">
+      <!-- Hero banner with main message and primary actions -->
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-content">
           <p class="eyebrow">Holistic care led by a Family Nurse Practitioner</p>
@@ -41,17 +51,21 @@
             for families in New Braunfels, Seguin, and Central Texas.
           </p>
           <div class="hero-actions" aria-label="Schedule options">
+            <!-- Primary call button for fast scheduling -->
             <a class="button primary" href="tel:+12108651276">Call to book</a>
+            <!-- Secondary action to scroll down and learn more about services -->
             <a class="button secondary" href="#services">Explore services</a>
           </div>
+          <!-- Provider credentials for trust and reassurance -->
           <div class="hero-trust" aria-label="Provider credentials">
             <span><span data-experience-plus>26+</span> years in family practice, ER, and neurology</span>
-            <span>AMA Certified</span>
+            <span>AMA Certified Acu-Detox specialist</span>
             <span>Family Nurse Practitioner-led holistic care</span>
           </div>
         </div>
         <aside class="hero-media" aria-label="Provider profile">
           <img src="assets/mandy-wright-clinical.webp" alt="Mandy Wright, APRN, FNP-C">
+          <!-- Provider quick bio with credential highlight -->
           <div class="provider-summary">
             <strong>Mandy Wright, APRN, FNP-C</strong>
             <span>Holistic wellness care in New Braunfels</span>
@@ -59,6 +73,7 @@
         </aside>
       </section>
 
+      <!-- Bar highlighting practice values: accessibility, comfort, and flexible payment -->
       <section class="trust-bar" aria-label="Practice highlights">
         <div>
           <strong>Direct access</strong>
@@ -74,6 +89,7 @@
         </div>
       </section>
 
+      <!-- Introduction section establishing whole-person approach -->
       <section class="section intro-section" aria-labelledby="intro-title">
         <div class="section-kicker">Whole-person wellness</div>
         <div class="intro-grid">
@@ -85,6 +101,7 @@
               you feel informed before care begins.
             </p>
           </div>
+          <!-- Highlighting which types of cases/clients are a good fit -->
           <div class="intro-note">
             <strong>Good fit for</strong>
             <p>
@@ -96,17 +113,21 @@
         </div>
       </section>
 
+      <!-- Main services section with a tile/card for each service offered -->
       <section class="section services-section" id="services" aria-labelledby="services-title">
         <div class="section-header">
           <div>
             <div class="section-kicker">Services</div>
             <h2 id="services-title">Choose the support your body needs now.</h2>
+            <p class="section-helper">Select a service card to see treatment details, options, and what to expect.</p>
           </div>
+          <!-- Call to action for direct contact -->
           <a class="section-cta" href="tel:+12108651276">Ask which visit fits best</a>
         </div>
 
+        <!-- Service cards display each offer as a clickable, accessible card -->
         <div class="service-grid">
-          <article class="service-card">
+          <article class="service-card" role="button" tabindex="0" data-service-key="auriculotherapy">
             <span class="service-meta">Auriculotherapy | 15-30 min | Ages 5+</span>
             <h3>Auriculotherapy</h3>
             <p>
@@ -119,7 +140,7 @@
             </ul>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" role="button" tabindex="0" data-service-key="acudetox">
             <span class="service-meta">Nervous system reset | 45-60 min | Ages 10+</span>
             <h3>Acudetox 5-point ear acupuncture</h3>
             <p>
@@ -133,7 +154,7 @@
             </ul>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" role="button" tabindex="0" data-service-key="ear-candling">
             <span class="service-meta">Relaxing ear wellness | 30 min | Ages 5+</span>
             <h3>Ear candling</h3>
             <p>
@@ -147,7 +168,7 @@
             </ul>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" role="button" tabindex="0" data-service-key="weight-loss">
             <span class="service-meta">Medical guidance | Adults 18+</span>
             <h3>Medical weight-loss guidance</h3>
             <p>
@@ -161,7 +182,7 @@
             </ul>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" role="button" tabindex="0" data-service-key="aesthetics">
             <span class="service-meta">Natural refresh | 45-60 min | Adults 18+</span>
             <h3>Holistic aesthetics</h3>
             <p>
@@ -175,7 +196,7 @@
             </ul>
           </article>
 
-          <article class="service-card injection-card">
+          <article class="service-card injection-card" role="button" tabindex="0" data-service-key="vitamin-injections">
             <span class="service-meta">Quick wellness boost | 10-15 min | Adults 18+</span>
             <h3>Vitamin injections</h3>
             <p>
@@ -185,16 +206,37 @@
             <ul>
               <li>MIC/B12</li>
               <li>NAD+</li>
+              <li>B12</li>
               <li>Glutathione</li>
               <li>Tri-Immune</li>
-              <li>Mycrs Cocktail</li>
-              <li>B12</li>
+              <li>Myers Cocktail</li>
             </ul>
           </article>
         </div>
       </section>
 
+      <!-- Modal overlay for on-demand details about each service when a card is clicked -->
+      <div class="service-modal" id="service-modal" aria-hidden="true">
+        <!-- Clicking the overlay closes the modal (configured in JS) -->
+        <div class="service-modal__overlay" data-service-modal-close></div>
+        <section class="service-modal__panel" role="dialog" aria-modal="true" aria-labelledby="service-modal-title" tabindex="-1">
+          <!-- Modal close button, visible in the modal's corner -->
+          <button class="service-modal__close" type="button" aria-label="Close service details" data-service-modal-close>&times;</button>
+          <!-- Modal "eyebrow": service meta information (duration, age, etc) -->
+          <div class="service-modal__eyebrow" id="service-modal-meta"></div>
+          <h2 id="service-modal-title"></h2>
+          <div class="service-modal__content" id="service-modal-content"></div>
+          <!-- Modal footer with call-to-action and return buttons -->
+          <div class="service-modal__actions">
+            <a class="button primary" href="tel:+12108651276">Call to book</a>
+            <button class="button secondary" type="button" data-service-modal-close>Back to services</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- About section: Bio, credentials, and education for the provider -->
       <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="section-divider" aria-hidden="true"></div>
         <div class="section-kicker">Meet your practitioner</div>
         <div class="about-image">
           <img src="assets/mandy-wright-practitioner.png" alt="Mandy Wright, Family Nurse Practitioner and owner of Your Healing Seeds">
@@ -207,25 +249,32 @@
             so clients feel heard, informed, and cared for.
           </p>
           <p class="partner-note" style="font-weight: 500;">
-            <em>I'm not just your practitioner; I'm your partner in healing. That's why I share my personal cell number and remain available for any questions you may have.</em>
+            <em>I'm not just your practitioner; I'm your partner in healing. That's why I share my  and remain available for any questions you may have.</em>
           </p>
-  
-   
+          <!-- List of credentials/badges-->
           <div class="credential-list" aria-label="Credentials">
             <span>Family Nurse Practitioner</span>
-            <span>AMA Certified</span>
+            <span>AMA Certified Acu-Detox Specialist</span>
             <span>Certified in Auriculotherapy</span>
+            <span>Multi-Certified Aesthetic Specialist</span>
           </div>
+          <!-- Education and training in chronological order -->
           <div class="education-panel" aria-label="Education and training">
             <h3>Education and Training</h3>
             <dl>
               <div>
                 <dt>1996</dt>
-                <dd>Bachelor of Science in Nursing</dd>
+                <dd>
+                  Bachelor of Science in Nursing<br>
+                  <em>UT Health Science Center San Antonio</em>
+                </dd>
               </div>
               <div>
                 <dt>2000</dt>
-                <dd>Master of Science in Nursing, UT Health Science Center</dd>
+                <dd>
+                  Master of Science in Nursing<br>
+                  <em>UT Health Science Center San Antonio</em>
+                </dd>
               </div>
               <div>
                 <dt>2007</dt>
@@ -248,6 +297,7 @@
         </div>
       </section>
 
+      <!-- "Your visit" process steps, outlining what to expect as a new client -->
       <section class="section visit-section" id="visit" aria-labelledby="visit-title">
         <div class="section-header compact">
           <div>
@@ -258,7 +308,7 @@
             </p>
           </div>
         </div>
-
+        <!-- Visual step-by-step representation -->
         <div class="steps">
           <article>
             <span>01</span>
@@ -278,6 +328,7 @@
         </div>
       </section>
 
+      <!-- 5-star proof section, reviews from real clients with a small carousel -->
       <section class="section proof-section" aria-labelledby="proof-title">
         <div class="proof-inner">
           <div class="proof-header">
@@ -296,11 +347,13 @@
               </div>
             </div>
           </div>
+          <!-- Carousel with prev/next buttons and live status for accessibility -->
           <div class="review-carousel" aria-label="Patient review carousel">
             <button class="carousel-button prev" type="button" aria-label="Previous review" data-carousel-prev>
               <span aria-hidden="true">&#8249;</span>
             </button>
             <div class="testimonial-track" tabindex="0" data-carousel-track>
+              <!-- Each testimonial is a figure with quote and source -->
               <figure class="testimonial-card">
                 <blockquote>
                   "Mandy explained everything so clearly, and I felt relief within hours."
@@ -353,11 +406,13 @@
             <button class="carousel-button next" type="button" aria-label="Next review" data-carousel-next>
               <span aria-hidden="true">&#8250;</span>
             </button>
+            <!-- aria-live status updates for screen readers on review changes -->
             <div class="carousel-status" aria-live="polite" data-carousel-status></div>
           </div>
         </div>
       </section>
 
+      <!-- FAQ section with details/summary for accessibility and quick browsing -->
       <section class="faq-band" id="faq" aria-labelledby="faq-title">
         <div class="section faq-section">
           <div class="faq-intro">
@@ -371,7 +426,7 @@
             <details>
               <summary>How do I schedule my first appointment?</summary>
               <p>
-                Easy! Just call Mandy directly at <a href="tel:+12108651276">210-865-1276</a>. She loves chatting with new patients to make sure you're a good fit and to answer any questions you have.
+                Easy! Just call Your Healing Seeds directly at <a href="tel:+12108651276">210-865-1276</a>. Mandy's staff loves chatting with new patients to schedule you and answer any questions you have.
               </p>
             </details>
             <details>
@@ -383,7 +438,7 @@
             <details>
               <summary>How much time should I plan for?</summary>
               <p>
-                First visits usually take a bit longer as you get to know each other. Plan for about 15 minutes extra on your first visit for paperwork and questions.
+                First visits usually take a bit longer as intial information needs to be gathered. Plan for about 15 extra minutes than listed in services section on your first visit for paperwork and questions.
               </p>
             </details>
             <details>
@@ -399,22 +454,21 @@
               </p>
             </details>
             <details>
-              <summary>Are you taking new patients?</summary>
-              <p>
-                Yes! Mandy loves meeting new people and helping them on their healing journey.
-              </p>
-            </details>
-            <details>
               <summary>Can I text you with questions?</summary>
               <p>
-                Yes! All patients get Mandy’s personal number. If you have questions between visits, just reach out—she’s here to support your healing.
+                Yes! All patients get access to Mandy’s patient portal. If you have questions between visits, just reach out - she’s here to support your healing.
               </p>
             </details>
           </div>
         </div>
       </section>
 
+<<<<<<< HEAD
  <section class="section contact-section" id="contact" aria-labelledby="contact-title" style="padding-bottom: 2.2rem;">
+=======
+      <!-- Contact section with call and directions options, and modal for directions -->
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title" style="padding-bottom: 2.2rem;">
+>>>>>>> da48ac0 (Add service details modal and update site content)
         <div class="contact-panel">
           <div>
             <img class="contact-logo" src="assets/your-healing-seeds-logo.jpg" alt="Your Healing Seeds logo">
@@ -425,34 +479,46 @@
             </p>
           </div>
           <div class="contact-actions">
+            <!-- Main CTA for calling -->
             <a class="button primary" href="tel:+12108651276">Call 210-865-1276</a>
+            <!-- Button that opens the directions modal -->
             <a 
               class="button secondary"
               href="#"
               id="location-directions-btn"
               >Get directions</a>
           </div>
+          <!-- Address for New Braunfels office -->
           <address>
-            <strong>Your Healing Seeds</strong>
+            <strong>Your Healing Seeds - New Braunfels</strong>
+            <span>953 E Kingsbury St</span>
+            <span>Seguin, Texas 78155</span>
+          </address>
+          <!-- Address for Seguin office -->
+          <address>
+            <strong>Your Healing Seeds - Seguin</strong>
             <span>1109 North Walnut Avenue</span>
             <span>New Braunfels, Texas 78130</span>
           </address>
         </div>
-        <!-- Location selection popup -->
+        <!-- Location selection popup overlay that appears on clicking directions button -->
         <div id="location-popup" style="display:none; position: fixed; top: 0; left:0; width:100vw; height:100vh; background: rgba(0,0,0,0.45); align-items: center; justify-content: center; z-index: 1111;">
           <div style="background: #fff; padding: 2rem 2.2rem 1.5rem 2.2rem; border-radius: 1rem; max-width: 360px; margin: auto; text-align: center; box-shadow: 0 4px 28px rgba(0,0,0,0.11); position: relative;">
+            <!-- Close button for the popup, in the top right -->
             <button style="background: none; border: none; font-size: 1.6rem; position: absolute; right: 1rem; top: 0.6rem; color: #555; cursor: pointer;" id="close-location-popup" aria-label="Close popup">&times;</button>
             <h3 style="margin-bottom: 0.8rem; font-size: 1.25rem;">Choose a location</h3>
             <p style="font-size: 1rem; color: #222; margin-bottom: 1.4rem;">
               Which location do you want directions for?
             </p>
+            <!-- Button: Directions to New Braunfels location (Google Maps link) -->
             <a 
-              class="button primary" 
+              class="button secondary" 
               style="display: block; margin-bottom: 0.8rem;"
               href="https://www.google.com/maps/search/?api=1&query=1109+North+Walnut+Avenue+New+Braunfels+TX+78130" 
               target="_blank" 
               rel="noopener"
               >New Braunfels</a>
+            <!-- Button: Directions to Seguin location (Google Maps link) -->
             <a 
               class="button secondary"
               style="display: block;"
@@ -463,27 +529,29 @@
           </div>
         </div>
         <script>
-          // Only one instance of script, will not break on multiple page renders.
+          // This script controls the location popup shown for getting directions in the contact section
           (function() {
-            const btn = document.getElementById('location-directions-btn');
-            const popup = document.getElementById('location-popup');
-            const close = document.getElementById('close-location-popup');
+            const btn = document.getElementById('location-directions-btn'); // Button that opens the directions popup
+            const popup = document.getElementById('location-popup'); // The popup overlay itself
+            const close = document.getElementById('close-location-popup'); // The close button within the popup
             if (btn && popup && close) {
+              // Open popup when directions button is clicked
               btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                popup.style.display = 'flex';
-                popup.focus && popup.focus();
+                e.preventDefault(); // Prevent default anchor navigation
+                popup.style.display = 'flex'; // Show popup, using flex for centering
+                popup.focus && popup.focus(); // Focus popup if focus() is defined
               });
+              // Close popup when close button is clicked
               close.addEventListener('click', function() {
-                popup.style.display = 'none';
+                popup.style.display = 'none'; // Hide popup
               });
-              // Hide on background click
+              // Close popup when clicking the background overlay outside the dialog
               popup.addEventListener('click', function(ev) {
                 if (ev.target === popup) {
-                  popup.style.display = 'none';
+                  popup.style.display = 'none'; // Hide popup on background click
                 }
               });
-              // ESC key to close
+              // Allow closing the popup with the Escape key for accessibility
               document.addEventListener('keydown', function(e) {
                 if (popup.style.display === 'flex' && e.key === 'Escape') {
                   popup.style.display = 'none';
@@ -494,6 +562,7 @@
         </script>
       </section>
 
+      <!-- Medical oversight acknowledgement and fine print for legal clarity -->
       <section class="fine-print" aria-label="Medical note" style="border-top: none; box-shadow: none; padding-top: 3.5rem;">
         <div class="medical-oversight" aria-label="Medical oversight">
           <img src="assets/dolores-major.webp" alt="Dolores Major, MD">
@@ -501,7 +570,7 @@
             <div class="section-kicker">Medical oversight</div>
             <h2>Dolores Major, MD</h2>
             <p>
-              After serving as a Captain for the U.S. Air Force Nurse Corps, Dolores Major, MD continued her education and received her Doctor of Medicine. She then completed an internship in pediatrics and a residency in anesthesiology. Dr. Major served as Department Chairman for Anesthesiology at Saint Anthony's Central Hospital in Denver, before relocating to Texas. Currently, she is involved in various committees at GRMC, including Physician Recruitment, Credentialing, and Surgical and Obstetrical services. Since 2006, Dr. Major has also been a member of the GRMC Governing Board and is currently the Vice Chairman. In her practice, she emphasizes holistic approaches, including Acudetox and acupuncture in New Braunfels, TX, as well as collaborating with Healing Seeds for patients interested in Weight Loss in Seguin.
+              After serving as a Captain for the U.S. Air Force Nurse Corps, Dolores Major, MD continued her education and received her Doctor of Medicine. She then completed an internship in pediatrics and a residency in anesthesiology. Dr. Major served as Department Chairman for Anesthesiology at Saint Anthony's Central Hospital in Denver, before relocating to Texas. Currently, she is involved in various committees at GRMC, including Physician Recruitment, Credentialing, and Surgical and Obstetrical services. Since 2006, Dr. Major has also been a member of the GRMC Governing Board and is currently the Vice Chairman. As a hospital-employed anesthesiologist based locally, Dr. Major is available for collaboration and is supportive of holistic approaches for the community.
             </p>
           </div>
         </div>
@@ -518,6 +587,140 @@
     </footer>
 
     <a class="mobile-call" href="tel:+12108651276">Call to book</a>
+
+    <script>
+      (() => {
+        const services = {
+          auriculotherapy: {
+            meta: "Auriculotherapy | 15-30 min | Ages 5+",
+            title: "Auriculotherapy",
+            content: `
+              <p>Gentle ear-point support for clients who want a calm, non-invasive wellness visit. This appointment may be a good fit for stress support, sleep concerns, headaches, TMJ discomfort, allergy support, motion sickness, and smoking support.</p>
+              <p>Mandy explains what to expect before beginning, keeps the visit relaxed, and helps you decide whether this service fits your goals.</p>
+            `
+          },
+          acudetox: {
+            meta: "Nervous system reset | 45-60 min | Ages 10+",
+            title: "Acudetox 5-point ear acupuncture",
+            content: `
+              <p>A gentle 5-point ear acupuncture treatment designed to support calm, balance, and nervous system regulation.</p>
+              <ul class="service-detail-list">
+                <li><strong>NADA-Certified Care:</strong> Acudetox uses the standardized NADA protocol, a 5-point auricular acupuncture method performed by a specially trained practitioner.</li>
+                <li><strong>Stress & Emotional Support:</strong> Often used to support stress relief, anxiety, overwhelm, grief, trauma, burnout, cravings, and emotional regulation.</li>
+                <li><strong>Nervous System Reset:</strong> Tiny sterile needles are placed in specific ear points to help the body settle, release tension, and return to a calmer state.</li>
+                <li><strong>What to Expect:</strong> You'll sit comfortably while the needles remain in place for about 30 to 45 minutes. Most clients feel little to no discomfort and experience deep relaxation.</li>
+                <li><strong>Best For:</strong> Clients seeking a quiet, grounding wellness treatment for stress, sleep support, cravings, emotional balance, or overall restoration.</li>
+              </ul>
+              <p class="service-fun-fact"><em>Real-World Applications: The NADA protocol has been successfully used in disaster relief efforts worldwide. After the terrorist attacks on the World Trade Center, an acudetox "stress reduction clinic" began in Manhattan, providing over 1,000 treatments in the first 10 days. After the 2011 Joplin, Missouri tornado disaster, 700 treatments were provided to offer relief from trauma, with overwhelmingly positive results including reduction in physical pain and improved sleep.</em></p>
+            `
+          },
+          "ear-candling": {
+            meta: "Relaxing ear wellness | 30 min | Ages 5+",
+            title: "Ear candling",
+            content: `
+              <p>A calming wellness service designed for relaxation, gentle warmth, and a peaceful self-care experience.</p>
+              <ul class="service-detail-list">
+                <li><strong>Natural Ear Wellness:</strong> Ear candling uses a hollow beeswax candle placed near the ear opening to create gentle warmth and soft crackling sounds many clients find soothing.</li>
+                <li><strong>Relaxation Support:</strong> This service is often chosen for stress relief, quiet time, sensory relaxation, and a peaceful reset.</li>
+                <li><strong>Honest Expectations:</strong> Ear candling is offered as a wellness experience, not a medical treatment. It does not remove earwax or treat ear infections, sinus issues, hearing loss, or other medical concerns.</li>
+                <li><strong>What to Expect:</strong> Your practitioner will review the process, help you get comfortable, and monitor the session closely. Most appointments take 45 to 60 minutes including consultation, treatment, and rest time.</li>
+                <li><strong>Best For:</strong> Adults looking for a unique, gentle relaxation ritual or a calming add-on to other holistic wellness services.</li>
+              </ul>
+            `
+          },
+          "weight-loss": {
+            meta: "Medical guidance | Adults 18+",
+            title: "Holistic weight loss",
+            content: `
+              <p>A personalized weight loss program designed to support appetite control, metabolism, energy, and long-term wellness.</p>
+              <ul class="service-detail-list">
+                <li><strong>Semaglutide & Tirzepatide:</strong> Once-weekly injections that help regulate appetite, reduce cravings, support blood sugar balance, and make it easier to feel full with less food.</li>
+                <li><strong>Lipotropic Injections:</strong> Nutrient-based injections with ingredients like B vitamins, methionine, inositol, and choline to support fat metabolism, liver function, and energy.</li>
+                <li><strong>Personalized Consultation:</strong> Your provider will review your goals, health history, lifestyle, and current medications to help choose the right plan for you.</li>
+                <li><strong>Flexible Options:</strong> Choose from structured monthly programs with ongoing support or weekly shot appointments for a more independent approach.</li>
+                <li><strong>Optional Blood Work:</strong> Recent labs may be reviewed or ordered to help personalize your plan and support safe, effective treatment.</li>
+              </ul>
+            `
+          },
+          aesthetics: {
+            meta: "Natural refresh | 45-60 min | Adults 18+",
+            title: "Holistic aesthetics",
+            content: `
+              <p>Natural-looking injectable treatments designed to smooth fine lines, restore volume, and enhance your features without looking overdone.</p>
+              <ul class="service-detail-list">
+                <li><strong>Jeuveau:</strong> A wrinkle relaxer that softens expression lines like forehead lines, frown lines, and crow's feet. Results typically last 3 to 4 months.</li>
+                <li><strong>Daxxify:</strong> A longer-lasting wrinkle relaxer that helps smooth expression lines, with results that may last up to 5+ months.</li>
+                <li><strong>Dermal Fillers:</strong> Restore volume, add balance, and enhance areas like the lips, cheeks, chin, jawline, under-eyes, temples, hands, and ear lobes.</li>
+                <li><strong>Treatment Experience:</strong> Most appointments take 15 to 30 minutes with minimal downtime. Your provider will create a personalized plan based on your goals and facial structure.</li>
+              </ul>
+            `
+          },
+          "vitamin-injections": {
+            meta: "Quick wellness boost | 10-15 min | Adults 18+",
+            title: "Vitamin injections",
+            content: `
+              <p>Quick wellness appointments for clients looking for energy, metabolism, nutrient support, detoxification, immune health, and healthy aging support.</p>
+              <ul class="service-detail-list">
+                <li><strong>MIC/B12:</strong> Supports metabolism, energy, weight loss, liver function, mood, and overall wellness.</li>
+                <li><strong>NAD+:</strong> Supports cellular energy, brain function, DNA repair, metabolism, and healthy aging.</li>
+                <li><strong>Glutathione:</strong> A powerful antioxidant that supports detoxification, immune health, skin health, and anti-aging.</li>
+                <li><strong>B12:</strong> Helps boost energy, support mood, brain function, metabolism, and healthy red blood cell production.</li>
+              </ul>
+            `
+          }
+        };
+
+        const modal = document.getElementById("service-modal");
+        const panel = modal?.querySelector(".service-modal__panel");
+        const title = document.getElementById("service-modal-title");
+        const meta = document.getElementById("service-modal-meta");
+        const content = document.getElementById("service-modal-content");
+        let lastFocusedElement = null;
+        let closeTimer = null;
+
+        if (!modal || !panel || !title || !meta || !content) return;
+
+        const openModal = (key) => {
+          const service = services[key];
+          if (!service) return;
+          lastFocusedElement = document.activeElement;
+          meta.textContent = service.meta;
+          title.textContent = service.title;
+          content.innerHTML = service.content;
+          window.clearTimeout(closeTimer);
+          modal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("modal-open");
+          panel.focus();
+        };
+
+        const closeModal = () => {
+          modal.setAttribute("aria-hidden", "true");
+          window.clearTimeout(closeTimer);
+          closeTimer = window.setTimeout(() => {
+            document.body.classList.remove("modal-open");
+            if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
+          }, 240);
+        };
+
+        document.querySelectorAll("[data-service-key]").forEach((card) => {
+          card.addEventListener("click", () => openModal(card.dataset.serviceKey));
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openModal(card.dataset.serviceKey);
+            }
+          });
+        });
+
+        modal.querySelectorAll("[data-service-modal-close]").forEach((element) => {
+          element.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
+        });
+      })();
+    </script>
 
     <script>
       (() => {
