@@ -282,7 +282,7 @@ a {
 .hero-trust span {
   color: var(--sage-dark);
   font-size: clamp(1.1rem, 1.35vw, 1.22rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -1228,15 +1228,41 @@ details a {
   justify-content: flex-end;
 }
 
+.location-grid {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 1.4rem;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-top: 1.25rem;
+}
+
 address {
   color: var(--muted);
   display: grid;
   font-style: normal;
-  grid-column: 1 / -1;
+  gap: 0.12rem;
 }
 
 address strong {
   color: var(--ink);
+}
+
+.address-lines {
+  display: grid;
+  gap: 0.12rem;
+  min-height: 3.7rem;
+}
+
+.hours-label {
+  color: var(--ink);
+  font-weight: 700;
+  margin-top: 0.7rem;
+}
+
+.location-hours {
+  color: var(--sage-dark);
+  font-weight: 600;
 }
 
 .fine-print {
@@ -1420,6 +1446,10 @@ a[href^="tel:"] {
   }
 
   .medical-oversight {
+    grid-template-columns: 1fr;
+  }
+
+  .location-grid {
     grid-template-columns: 1fr;
   }
 

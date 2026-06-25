@@ -13,7 +13,7 @@
   <!-- Preload the main hero image so it appears quicker on first paint -->
   <link rel="preload" href="assets/mandy-wright-clinical.webp" as="image">
   <!-- Main stylesheet for visual layout and custom components -->
-    <link rel="stylesheet" href="styles.css?v=acudetox-popup-1">
+    <link rel="stylesheet" href="styles.css?v=hero-trust-thin-1">
 </head>
 
 <body>
@@ -241,7 +241,7 @@
       <div class="section-divider" aria-hidden="true"></div>
       <div class="section-kicker">Meet your practitioner</div>
       <div class="about-image">
-        <img src="assets/mandy-wright-practitioner.png"
+        <img src="assets/mandy-wright-treatment-room.png"
           alt="Mandy Wright, Family Nurse Practitioner and owner of Your Healing Seeds">
       </div>
       <div class="about-copy">
@@ -491,18 +491,29 @@
           <!-- Button that opens the directions modal -->
           <a class="button secondary" href="#" id="location-directions-btn">Get directions</a>
         </div>
-        <!-- Address for New Braunfels office -->
-        <address>
-          <strong>Your Healing Seeds - New Braunfels</strong>
-          <span>953 E Kingsbury St</span>
-          <span>Seguin, Texas 78155</span>
-        </address>
-        <!-- Address for Seguin office -->
-        <address>
-          <strong>Your Healing Seeds - Seguin</strong>
-          <span>1109 North Walnut Avenue</span>
-          <span>New Braunfels, Texas 78130</span>
-        </address>
+        <div class="location-grid" aria-label="Locations and business hours">
+          <!-- Address and hours for New Braunfels office -->
+          <address>
+            <strong>Your Healing Seeds - New Braunfels</strong>
+            <span class="address-lines">
+              <span>1109 North Walnut Avenue</span>
+              <span>New Braunfels, Texas 78130</span>
+            </span>
+            <span class="hours-label">Business hours</span>
+            <span class="location-hours">Monday and Wednesday, 9 a.m. - 5 p.m.</span>
+            <span class="location-hours">Friday, 9 a.m. - 12 p.m.</span>
+          </address>
+          <!-- Address and hours for Seguin office -->
+          <address>
+            <strong>Your Healing Seeds - Seguin</strong>
+            <span class="address-lines">
+              <span>953 E Kingsbury St</span>
+              <span>Seguin, Texas 78155</span>
+            </span>
+            <span class="hours-label">Business hours</span>
+            <span class="location-hours">Tuesday and Thursday, 9 a.m. - 5 p.m.</span>
+          </address>
+        </div>
       </div>
       <!-- Location selection popup overlay that appears on clicking directions button -->
       <div id="location-popup"
@@ -661,6 +672,8 @@
                 <li><strong>Jeuveau:</strong> A wrinkle relaxer that softens expression lines like forehead lines, frown lines, and crow's feet. Results typically last 3 to 4 months.</li>
                 <li><strong>Daxxify:</strong> A longer-lasting wrinkle relaxer that helps smooth expression lines, with results that may last up to 5+ months.</li>
                 <li><strong>Dermal Fillers:</strong> Restore volume, add balance, and enhance areas like the lips, cheeks, chin, jawline, under-eyes, temples, hands, and ear lobes.</li>
+                <li><strong>Medical Microneedling (SkinPen):</strong> Stimulates collagen production to improve skin texture, reduce acne scarring, soften fine lines, minimize pores, and support overall skin rejuvenation with minimal downtime.</li>
+                <li><strong>NovaThreads (PDO Threads):</strong> A minimally invasive treatment that lifts and supports areas of the face while stimulating natural collagen production, helping improve firmness and contour over time.</li>
                 <li><strong>Treatment Experience:</strong> Most appointments take 15 to 30 minutes with minimal downtime. Your provider will create a personalized plan based on your goals and facial structure.</li>
               </ul>
             `
@@ -675,6 +688,9 @@
                 <li><strong>NAD+:</strong> Supports cellular energy, brain function, DNA repair, metabolism, and healthy aging.</li>
                 <li><strong>Glutathione:</strong> A powerful antioxidant that supports detoxification, immune health, skin health, and anti-aging.</li>
                 <li><strong>B12:</strong> Helps boost energy, support mood, brain function, metabolism, and healthy red blood cell production.</li>
+                <li><strong>Meyers Cocktail:</strong> A nutrient-rich injection with vitamin C, B vitamins, and essential nutrients to support immune health, energy, hydration, recovery, and overall wellness.</li>
+                <li><strong>Tri-Immune:</strong> An immune-support blend with vitamin C, zinc, and glutathione to help strengthen immune defenses, support recovery, and protect cellular health.</li>
+                <li><strong>MIC/B12:</strong> A metabolism-support injection that combines lipotropic nutrients with B12 to support energy, fat metabolism, liver function, mood, and weight loss goals.</li>
               </ul>
             `
         }
