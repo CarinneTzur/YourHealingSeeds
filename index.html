@@ -13,7 +13,7 @@
   <!-- Preload the main hero image so it appears quicker on first paint -->
   <link rel="preload" href="assets/mandy-wright-clinical.webp" as="image">
   <!-- Main stylesheet for visual layout and custom components -->
-    <link rel="stylesheet" href="styles.css?v=hero-trust-thin-1">
+    <link rel="stylesheet" href="styles.css?v=contact-popup-3">
 </head>
 
 <body>
@@ -36,8 +36,8 @@
       <a href="#visit">First Visit</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <!-- Header call-to-action for quick phone scheduling -->
-    <a class="header-cta" href="tel:+12108651276">Call 210-865-1276</a>
+    <!-- Header call-to-action for quick contact options -->
+    <a class="header-cta contact-trigger" href="#">Contact</a>
   </header>
 
   <main id="main">
@@ -51,8 +51,8 @@
           for families in New Braunfels, Seguin, and Central Texas.
         </p>
         <div class="hero-actions" aria-label="Schedule options">
-          <!-- Primary call button for fast scheduling -->
-          <a class="button primary" href="tel:+12108651276">Call to book</a>
+          <!-- Primary contact button for fast scheduling -->
+          <a class="button primary contact-trigger" href="#">Contact</a>
           <!-- Secondary action to scroll down and learn more about services -->
           <a class="button secondary" href="#services">Explore services</a>
         </div>
@@ -122,24 +122,11 @@
           <p class="section-helper">Select a service card to see treatment details, options, and what to expect.</p>
         </div>
         <!-- Call to action for direct contact -->
-        <a class="section-cta" href="tel:+12108651276">Ask which service fits best</a>
+        <a class="section-cta contact-trigger" href="#">Contact</a>
       </div>
 
       <!-- Service cards display each offer as a clickable, accessible card -->
       <div class="service-grid">
-        <article class="service-card" role="button" tabindex="0" data-service-key="auriculotherapy">
-          <span class="service-meta">Auriculotherapy & Ear Seeds | 15-30 min | Ages 5+</span>
-          <h3>Auriculotherapy & Ear Seeds</h3>
-          <p>
-            Gentle ear-point support for clients looking for a calm, non-invasive wellness visit.
-          </p>
-          <ul>
-            <li>Stress and sleep support</li>
-            <li>Headaches, TMJ, and chronic discomfort</li>
-            <li>Allergies, motion sickness, and smoking support</li>
-          </ul>
-        </article>
-
         <article class="service-card" role="button" tabindex="0" data-service-key="acudetox">
           <span class="service-meta">Nervous system reset | 45-60 min | Ages 10+</span>
           <h3>Acudetox</h3>
@@ -151,6 +138,19 @@
             <li>Stress, burnout, and anxiety support</li>
             <li>Smoking and substance-use recovery support</li>
             <li>Sleep and focus support</li>
+          </ul>
+        </article>
+
+        <article class="service-card" role="button" tabindex="0" data-service-key="auriculotherapy">
+          <span class="service-meta">Auriculotherapy & Ear Seeds | 15-30 min | Ages 5+</span>
+          <h3>Auriculotherapy & Ear Seeds</h3>
+          <p>
+            Gentle ear-point support for clients looking for a calm, non-invasive wellness visit.
+          </p>
+          <ul>
+            <li>Stress and sleep support</li>
+            <li>Headaches, TMJ, and chronic discomfort</li>
+            <li>Allergies, motion sickness, and smoking support</li>
           </ul>
         </article>
 
@@ -168,17 +168,16 @@
           </ul>
         </article>
 
-        <article class="service-card" role="button" tabindex="0" data-service-key="weight-loss">
-          <span class="service-meta">Medical guidance | Adults 18+</span>
-          <h3>Medical weight-loss guidance</h3>
+        <article class="service-card" role="button" tabindex="0" data-service-key="hair-restoration">
+          <span class="service-meta">Hair restoration | Adults 18+</span>
+          <h3>Hair restoration with microneedling & exosomes</h3>
           <p>
-            Personalized consultation for people exploring prescription and peptide therapy options,
-            weekly support, and whole-person lifestyle guidance.
+            Scalp-focused treatment designed to support healthier-looking hair and scalp renewal.
           </p>
           <ul>
-            <li>Health history and goal review</li>
-            <li>Medication and peptide therapy discussion when appropriate</li>
-            <li>Ongoing accountability options</li>
+            <li>Microneedling scalp support</li>
+            <li>Exosome-based topical support</li>
+            <li>Personalized treatment planning</li>
           </ul>
         </article>
 
@@ -193,6 +192,33 @@
             <li>Facial rejuvenation focus</li>
             <li>Microneedling options</li>
             <li>Wellness-minded approach</li>
+          </ul>
+        </article>
+
+        <article class="service-card" role="button" tabindex="0" data-service-key="weight-loss">
+          <span class="service-meta">Medical guidance | Adults 18+</span>
+          <h3>Medical weight-loss guidance</h3>
+          <p>
+            Personalized consultation for people exploring prescription and peptide therapy options,
+            weekly support, and whole-person lifestyle guidance.
+          </p>
+          <ul>
+            <li>Health history and goal review</li>
+            <li>Medication and peptide therapy discussion when appropriate</li>
+            <li>Ongoing accountability options</li>
+          </ul>
+        </article>
+
+        <article class="service-card" role="button" tabindex="0" data-service-key="cryotherapy">
+          <span class="service-meta">Skin support | Adults 18+</span>
+          <h3>Skin lesion removal with cryotherapy</h3>
+          <p>
+            Focused cold therapy for appropriate benign skin concerns after a provider review.
+          </p>
+          <ul>
+            <li>Quick in-office appointment</li>
+            <li>Provider assessment before treatment</li>
+            <li>Aftercare guidance included</li>
           </ul>
         </article>
 
@@ -230,7 +256,7 @@
         <div class="service-modal__content" id="service-modal-content"></div>
         <!-- Modal footer with call-to-action and return buttons -->
         <div class="service-modal__actions">
-          <a class="button primary" href="tel:+12108651276">Call to book</a>
+          <a class="button primary contact-trigger" href="#">Contact</a>
           <button class="button secondary" type="button" data-service-modal-close>Back to services</button>
         </div>
       </section>
@@ -486,8 +512,8 @@
           </p>
         </div>
         <div class="contact-actions">
-          <!-- Main CTA for calling -->
-          <a class="button primary" href="tel:+12108651276">Call 210-865-1276</a>
+          <!-- Main CTA for contact options -->
+          <a class="button primary contact-trigger" href="#">Contact</a>
           <!-- Button that opens the directions modal -->
           <a class="button secondary" href="#" id="location-directions-btn">Get directions</a>
         </div>
@@ -538,12 +564,32 @@
             target="_blank" rel="noopener">Seguin</a>
         </div>
       </div>
+      <!-- Contact selection popup overlay that appears on clicking contact buttons -->
+      <div id="contact-popup"
+        style="display:none; position: fixed; top: 0; left:0; width:100vw; height:100vh; background: rgba(0,0,0,0.45); align-items: center; justify-content: center; z-index: 1111;">
+        <div
+          style="background: #fff; padding: 2rem 2.2rem 1.5rem 2.2rem; border-radius: 1rem; max-width: 360px; margin: auto; text-align: center; box-shadow: 0 4px 28px rgba(0,0,0,0.11); position: relative;">
+          <button
+            style="background: none; border: none; font-size: 1.6rem; position: absolute; right: 1rem; top: 0.6rem; color: #555; cursor: pointer;"
+            id="close-contact-popup" aria-label="Close popup">&times;</button>
+          <h3 style="margin-bottom: 0.8rem; font-size: 1.25rem;">Contact Your Healing Seeds</h3>
+          <p style="font-size: 1rem; color: #222; margin-bottom: 1.4rem;">
+            Call or email Mandy directly to ask questions or schedule a visit.
+          </p>
+          <a class="button primary" style="display: block; margin-bottom: 0.8rem;"
+            href="tel:+12108651276">Call 210-865-1276</a>
+          <a class="button primary contact-option-email" style="display: block;"
+            href="mailto:yourhealingseeds@gmail.com">Email yourhealingseeds@gmail.com</a>
+        </div>
+      </div>
       <script>
-        // This script controls the location popup shown for getting directions in the contact section
+        // This script controls the contact and location popups in the contact section
         (function () {
           const btn = document.getElementById('location-directions-btn'); // Button that opens the directions popup
           const popup = document.getElementById('location-popup'); // The popup overlay itself
           const close = document.getElementById('close-location-popup'); // The close button within the popup
+          const contactPopup = document.getElementById('contact-popup');
+          const contactClose = document.getElementById('close-contact-popup');
           if (btn && popup && close) {
             // Open popup when directions button is clicked
             btn.addEventListener('click', function (e) {
@@ -565,6 +611,29 @@
             document.addEventListener('keydown', function (e) {
               if (popup.style.display === 'flex' && e.key === 'Escape') {
                 popup.style.display = 'none';
+              }
+            });
+          }
+          if (contactPopup && contactClose) {
+            document.addEventListener('click', function (e) {
+              const contactButton = e.target.closest('.contact-trigger');
+              if (!contactButton) {
+                return;
+              }
+              e.preventDefault();
+              contactPopup.style.display = 'flex';
+            });
+            contactClose.addEventListener('click', function () {
+              contactPopup.style.display = 'none';
+            });
+            contactPopup.addEventListener('click', function (ev) {
+              if (ev.target === contactPopup) {
+                contactPopup.style.display = 'none';
+              }
+            });
+            document.addEventListener('keydown', function (e) {
+              if (contactPopup.style.display === 'flex' && e.key === 'Escape') {
+                contactPopup.style.display = 'none';
               }
             });
           }
@@ -604,7 +673,7 @@
     <a href="tel:+12108651276">210-865-1276</a>
   </footer>
 
-  <a class="mobile-call" href="tel:+12108651276">Call to book</a>
+  <a class="mobile-call contact-trigger" href="#">Contact</a>
 
   <script>
     (() => {
@@ -675,6 +744,32 @@
                 <li><strong>Medical Microneedling (SkinPen):</strong> Stimulates collagen production to improve skin texture, reduce acne scarring, soften fine lines, minimize pores, and support overall skin rejuvenation with minimal downtime.</li>
                 <li><strong>NovaThreads (PDO Threads):</strong> A minimally invasive treatment that lifts and supports areas of the face while stimulating natural collagen production, helping improve firmness and contour over time.</li>
                 <li><strong>Treatment Experience:</strong> Most appointments take 15 to 30 minutes with minimal downtime. Your provider will create a personalized plan based on your goals and facial structure.</li>
+              </ul>
+            `
+        },
+        cryotherapy: {
+          meta: "Skin support | Adults 18+",
+          title: "Skin lesion removal with cryotherapy",
+          content: `
+              <p>A focused cold-therapy service for appropriate benign skin concerns after a provider review.</p>
+              <ul class="service-detail-list">
+                <li><strong>Provider Assessment:</strong> Mandy reviews the area first to determine whether cryotherapy is an appropriate option or whether referral is recommended.</li>
+                <li><strong>Cryotherapy Treatment:</strong> Controlled cold is applied to the targeted area to help treat select superficial lesions.</li>
+                <li><strong>Quick Appointment:</strong> Many visits are brief and can often be completed in-office with simple aftercare instructions.</li>
+                <li><strong>Aftercare Guidance:</strong> You will receive clear expectations for how the area may look and feel as it heals.</li>
+              </ul>
+            `
+        },
+        "hair-restoration": {
+          meta: "Hair restoration | Adults 18+",
+          title: "Hair restoration with microneedling & exosomes",
+          content: `
+              <p>A scalp-focused treatment designed to support healthier-looking hair and scalp renewal using microneedling with exosome-based topical support.</p>
+              <ul class="service-detail-list">
+                <li><strong>Microneedling Support:</strong> Creates controlled microchannels in the scalp to support circulation, renewal, and topical absorption.</li>
+                <li><strong>Exosome-Based Care:</strong> Exosome topical support is applied as part of the treatment to help nourish the scalp environment.</li>
+                <li><strong>Personalized Planning:</strong> Your provider will discuss your goals, scalp concerns, and realistic expectations before recommending a plan.</li>
+                <li><strong>Best For:</strong> Adults looking for a non-surgical hair and scalp support option with minimal downtime.</li>
               </ul>
             `
         },

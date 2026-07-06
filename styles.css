@@ -743,15 +743,17 @@ p {
   border: 0.65rem solid var(--surface);
   border-radius: 8px;
   box-shadow: var(--shadow);
+  justify-self: center;
+  max-width: 340px;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .about-image img {
-  aspect-ratio: 4 / 5;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
   width: 100%;
 }
 
@@ -1328,6 +1330,10 @@ a[href^="tel:"] {
   font-weight: 550;
 }
 
+.contact-option-email {
+  font-weight: 550;
+}
+
 .mobile-call {
   display: none;
 }
@@ -1485,7 +1491,7 @@ a[href^="tel:"] {
   }
 
   .header-cta::after {
-    content: "Call";
+    content: "Contact";
     font-size: 0.92rem;
   }
 
