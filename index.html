@@ -13,7 +13,7 @@
   <!-- Preload the main hero image so it appears quicker on first paint -->
   <link rel="preload" href="assets/mandy-wright-clinical.webp" as="image">
   <!-- Main stylesheet for visual layout and custom components -->
-    <link rel="stylesheet" href="styles.css?v=contact-popup-3">
+    <link rel="stylesheet" href="styles.css?v=contact-call-only-1">
 </head>
 
 <body>
@@ -34,6 +34,7 @@
       <a href="#services">Services</a>
       <a href="#about">Meet Mandy</a>
       <a href="#visit">First Visit</a>
+      <a href="https://stemwavepainrelief.com" target="_blank" rel="noopener">StemWave</a>
       <a href="#faq">FAQ</a>
     </nav>
     <!-- Header call-to-action for quick contact options -->
@@ -221,6 +222,19 @@
             <li>Aftercare guidance included</li>
           </ul>
         </article>
+
+        <a class="service-card service-card-link" href="https://stemwavepainrelief.com" target="_blank" rel="noopener">
+          <span class="service-meta">Pain relief | Dedicated treatment site</span>
+          <h3>StemWave treatment</h3>
+          <p>
+            Non-invasive acoustic wave therapy for clients looking for a separate pain-relief treatment resource.
+          </p>
+          <ul>
+            <li>Opens the dedicated StemWave site</li>
+            <li>Learn more about treatment options</li>
+            <li>View StemWave-specific information</li>
+          </ul>
+        </a>
 
         <article class="service-card injection-card" role="button" tabindex="0" data-service-key="vitamin-injections">
           <span class="service-meta">Quick wellness boost | 10-15 min | Adults 18+</span>
@@ -550,18 +564,28 @@
           <button
             style="background: none; border: none; font-size: 1.6rem; position: absolute; right: 1rem; top: 0.6rem; color: #555; cursor: pointer;"
             id="close-location-popup" aria-label="Close popup">&times;</button>
-          <h3 style="margin-bottom: 0.8rem; font-size: 1.25rem;">Choose a location</h3>
-          <p style="font-size: 1rem; color: #222; margin-bottom: 1.4rem;">
-            Which location do you want directions for?
-          </p>
-          <!-- Button: Directions to New Braunfels location (Google Maps link) -->
-          <a class="button secondary" style="display: block; margin-bottom: 0.8rem;"
-            href="https://www.google.com/maps/search/?api=1&query=1109+North+Walnut+Avenue+New+Braunfels+TX+78130"
-            target="_blank" rel="noopener">New Braunfels</a>
-          <!-- Button: Directions to Seguin location (Google Maps link) -->
-          <a class="button secondary" style="display: block;"
-            href="https://www.google.com/maps/place/953+E+Kingsbury+St,+Seguin,+TX+78155/@29.5807524,-97.9563731,17z/data=!3m1!4b1!4m6!3m5!1s0x865cb78eb4dc0eef:0xe249cd5877f646a6!8m2!3d29.5807478!4d-97.9537982!16s%2Fg%2F11csfrskcm?entry=ttu&amp;g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank" rel="noopener">Seguin</a>
+          <div class="directions-location-step">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.25rem;">Choose a location</h3>
+            <p style="font-size: 1rem; color: #222; margin-bottom: 1.4rem;">
+              Which location do you want directions for?
+            </p>
+            <button class="button secondary directions-location-choice" type="button" data-location="new-braunfels"
+              style="display: block; margin-bottom: 0.8rem; width: 100%;">New Braunfels</button>
+            <button class="button secondary directions-location-choice" type="button" data-location="seguin"
+              style="display: block; width: 100%;">Seguin</button>
+          </div>
+          <div class="directions-map-step" hidden>
+            <p class="directions-address" data-directions-address></p>
+            <a class="directions-map-option" data-apple-maps href="#" target="_blank" rel="noopener">
+              <span>Apple Maps</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="directions-map-option" data-google-maps href="#" target="_blank" rel="noopener">
+              <span>Google Maps</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <button class="directions-back" type="button" data-directions-back>Choose another location</button>
+          </div>
         </div>
       </div>
       <!-- Contact selection popup overlay that appears on clicking contact buttons -->
@@ -574,9 +598,9 @@
             id="close-contact-popup" aria-label="Close popup">&times;</button>
           <h3 style="margin-bottom: 0.8rem; font-size: 1.25rem;">Contact Your Healing Seeds</h3>
           <p style="font-size: 1rem; color: #222; margin-bottom: 1.4rem;">
-            Call or email Mandy directly to ask questions or schedule a visit.
+            Call Mandy directly to ask questions or schedule a visit.
           </p>
-          <a class="button primary" style="display: block; margin-bottom: 0.8rem;"
+          <a class="button primary" style="display: block;"
             href="tel:+12108651276">Call 210-865-1276</a>
         </div>
       </div>
@@ -586,12 +610,50 @@
           const btn = document.getElementById('location-directions-btn'); // Button that opens the directions popup
           const popup = document.getElementById('location-popup'); // The popup overlay itself
           const close = document.getElementById('close-location-popup'); // The close button within the popup
+          const locationStep = document.querySelector('.directions-location-step');
+          const mapStep = document.querySelector('.directions-map-step');
+          const locationChoices = document.querySelectorAll('.directions-location-choice');
+          const directionsAddress = document.querySelector('[data-directions-address]');
+          const appleMaps = document.querySelector('[data-apple-maps]');
+          const googleMaps = document.querySelector('[data-google-maps]');
+          const directionsBack = document.querySelector('[data-directions-back]');
           const contactPopup = document.getElementById('contact-popup');
           const contactClose = document.getElementById('close-contact-popup');
+          const locations = {
+            'new-braunfels': {
+              address: '1109 North Walnut Avenue, New Braunfels, TX',
+              apple: 'https://maps.apple.com/?address=1109%20North%20Walnut%20Avenue,%20New%20Braunfels,%20TX%2078130',
+              google: 'https://www.google.com/maps/search/?api=1&query=1109+North+Walnut+Avenue+New+Braunfels+TX+78130'
+            },
+            seguin: {
+              address: '953 E Kingsbury St, Seguin, TX',
+              apple: 'https://maps.apple.com/?address=953%20E%20Kingsbury%20St,%20Seguin,%20TX%2078155',
+              google: 'https://www.google.com/maps/search/?api=1&query=953+E+Kingsbury+St+Seguin+TX+78155'
+            }
+          };
+          const showLocationStep = () => {
+            if (!locationStep || !mapStep) {
+              return;
+            }
+            locationStep.hidden = false;
+            mapStep.hidden = true;
+          };
+          const showMapStep = (locationKey) => {
+            const location = locations[locationKey];
+            if (!location || !locationStep || !mapStep || !directionsAddress || !appleMaps || !googleMaps) {
+              return;
+            }
+            directionsAddress.textContent = location.address;
+            appleMaps.href = location.apple;
+            googleMaps.href = location.google;
+            locationStep.hidden = true;
+            mapStep.hidden = false;
+          };
           if (btn && popup && close) {
             // Open popup when directions button is clicked
             btn.addEventListener('click', function (e) {
               e.preventDefault(); // Prevent default anchor navigation
+              showLocationStep();
               popup.style.display = 'flex'; // Show popup, using flex for centering
               popup.focus && popup.focus(); // Focus popup if focus() is defined
             });
@@ -605,6 +667,14 @@
                 popup.style.display = 'none'; // Hide popup on background click
               }
             });
+            locationChoices.forEach(function (choice) {
+              choice.addEventListener('click', function () {
+                showMapStep(choice.dataset.location);
+              });
+            });
+            if (directionsBack) {
+              directionsBack.addEventListener('click', showLocationStep);
+            }
             // Allow closing the popup with the Escape key for accessibility
             document.addEventListener('keydown', function (e) {
               if (popup.style.display === 'flex' && e.key === 'Escape') {
