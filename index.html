@@ -9,11 +9,11 @@
   <title>Your Healing Seeds | Holistic Wellness in New Braunfels, TX</title>
   <!-- The description meta tag improves SEO and gives context about the business to search engines -->
   <meta name="description"
-    content="Your Healing Seeds offers auriculotherapy and ear seeds, Acudetox, ear candling, holistic aesthetics, vitamin injections, and medical weight-loss guidance in New Braunfels and Seguin.">
+    content="Your Healing Seeds offers auriculotherapy and ear seeds, Acudetox, ear candling, Facial Aesthetics, vitamin injections, and medical weight-loss guidance in New Braunfels and Seguin.">
   <!-- Preload the main hero image so it appears quicker on first paint -->
   <link rel="preload" href="assets/mandy-wright-clinical.webp" as="image">
   <!-- Main stylesheet for visual layout and custom components -->
-    <link rel="stylesheet" href="styles.css?v=contact-call-only-1">
+    <link rel="stylesheet" href="styles.css?v=service-pages-46">
 </head>
 
 <body>
@@ -30,15 +30,30 @@
       </span>
     </a>
     <!-- Main navigation links for the website -->
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#services">Services</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button><nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+      <a href="#top">Home</a>
+      <details class="nav-dropdown">
+        <summary>Services</summary>
+        <div class="nav-menu">
+          <a href="#services">All services</a>
+          <a href="services/acudetox.html">Acudetox</a>
+          <a href="services/auriculotherapy-ear-seeds.html">Auriculotherapy & Ear Seeds</a>
+          <a href="services/ear-candling.html">Ear Candling</a>
+          <a href="services/hair-restoration.html">Hair Restoration</a>
+          <a href="services/neurotoxin.html">Neurotoxin</a>
+          <a href="services/holistic-aesthetics.html">Facial Aesthetics</a>
+          <a href="services/medical-weight-loss.html">Medical Weight Loss</a>
+          <a href="services/cryotherapy-skin-lesion-removal.html">Cryotherapy</a>
+          <a href="services/vitamin-injections.html">Vitamin Injections</a>
+        </div>
+      </details>
       <a href="#about">Meet Mandy</a>
       <a href="#visit">First Visit</a>
       <a href="https://stemwavepainrelief.com" target="_blank" rel="noopener">StemWave</a>
       <a href="#faq">FAQ</a>
     </nav>
     <!-- Header call-to-action for quick contact options -->
-    <a class="header-cta contact-trigger" href="#">Contact</a>
+    <a class="header-cta contact-trigger" href="#">Call to Book</a>
   </header>
 
   <main id="main">
@@ -53,7 +68,7 @@
         </p>
         <div class="hero-actions" aria-label="Schedule options">
           <!-- Primary contact button for fast scheduling -->
-          <a class="button primary contact-trigger" href="#">Contact</a>
+          <a class="button primary contact-trigger" href="#">Call to Book</a>
           <!-- Secondary action to scroll down and learn more about services -->
           <a class="button secondary" href="#services">Explore services</a>
         </div>
@@ -120,10 +135,10 @@
         <div>
           <div class="section-kicker">Services</div>
           <h2 id="services-title">Choose the support your body needs now.</h2>
-          <p class="section-helper">Select a service card to see treatment details, options, and what to expect.</p>
+          <p class="section-helper">Select a service card to see treatment details, options, and what to expect. Each service also has a full page with more information.</p>
         </div>
         <!-- Call to action for direct contact -->
-        <a class="section-cta contact-trigger" href="#">Contact</a>
+        <a class="section-cta contact-trigger" href="#">Call to Book</a>
       </div>
 
       <!-- Service cards display each offer as a clickable, accessible card -->
@@ -184,7 +199,7 @@
 
         <article class="service-card" role="button" tabindex="0" data-service-key="aesthetics">
           <span class="service-meta">Natural refresh | 45-60 min | Adults 18+</span>
-          <h3>Holistic aesthetics</h3>
+          <h3>Facial Aesthetics</h3>
           <p>
             Natural-looking services for clients who want skin refreshment while
             keeping the result soft and personal.
@@ -193,6 +208,20 @@
             <li>Facial rejuvenation focus</li>
             <li>Microneedling options</li>
             <li>Wellness-minded approach</li>
+          </ul>
+        </article>
+
+        <article class="service-card" role="button" tabindex="0" data-service-key="neurotoxin">
+          <span class="service-meta">Wrinkle relaxer | 15-30 min | Adults 18+</span>
+          <h3>Neurotoxin treatments</h3>
+          <p>
+            Botox-style wrinkle relaxer services designed to soften expression lines
+            while keeping your results natural-looking.
+          </p>
+          <ul>
+            <li>Forehead, frown lines, and crow's feet</li>
+            <li>Lip flip, brow lift, and chin dimpling support</li>
+            <li>Personalized dosing and facial balance</li>
           </ul>
         </article>
 
@@ -253,6 +282,7 @@
           </ul>
         </article>
       </div>
+
     </section>
 
     <!-- Modal overlay for on-demand details about each service when a card is clicked -->
@@ -268,10 +298,10 @@
         <div class="service-modal__eyebrow" id="service-modal-meta"></div>
         <h2 id="service-modal-title"></h2>
         <div class="service-modal__content" id="service-modal-content"></div>
-        <!-- Modal footer with call-to-action and return buttons -->
+        <!-- Modal actions: quick contact and full SEO page link -->
         <div class="service-modal__actions">
-          <a class="button primary contact-trigger" href="#">Contact</a>
-          <button class="button secondary" type="button" data-service-modal-close>Back to services</button>
+          <a class="button primary contact-trigger" href="#">Call to Book</a>
+          <a class="button primary service-modal__page-button" id="service-modal-page-link" href="#">View full service page</a>
         </div>
       </section>
     </div>
@@ -527,7 +557,7 @@
         </div>
         <div class="contact-actions">
           <!-- Main CTA for contact options -->
-          <a class="button primary contact-trigger" href="#">Contact</a>
+          <a class="button primary contact-trigger" href="#">Call to Book</a>
           <!-- Button that opens the directions modal -->
           <a class="button secondary" href="#" id="location-directions-btn">Get directions</a>
         </div>
@@ -596,9 +626,9 @@
           <button
             style="background: none; border: none; font-size: 1.6rem; position: absolute; right: 1rem; top: 0.6rem; color: #555; cursor: pointer;"
             id="close-contact-popup" aria-label="Close popup">&times;</button>
-          <h3 style="margin-bottom: 0.8rem; font-size: 1.25rem;">Contact Your Healing Seeds</h3>
+          <h3 style="margin-bottom: 0.8rem; font-size: 1.25rem;">Call to Book Your Visit</h3>
           <p style="font-size: 1rem; color: #222; margin-bottom: 1.4rem;">
-            Call Mandy directly to ask questions or schedule a visit.
+            Call Mandy directly to book your visit, ask questions, or make sure the service is the right fit.
           </p>
           <a class="button primary" style="display: block;"
             href="tel:+12108651276">Call 210-865-1276</a>
@@ -741,7 +771,7 @@
     <a href="tel:+12108651276">210-865-1276</a>
   </footer>
 
-  <a class="mobile-call contact-trigger" href="#">Contact</a>
+  <a class="mobile-call contact-trigger" href="#">Call to Book</a>
 
   <script>
     (() => {
@@ -749,6 +779,7 @@
         auriculotherapy: {
           meta: "Auriculotherapy & Ear Seeds | 15-30 min | Ages 5+",
           title: "Auriculotherapy & Ear Seeds",
+          url: "services/auriculotherapy-ear-seeds.html",
           content: `
               <p>A gentle ear therapy treatment that combines electrical point stimulation with ear seed placement to support stress relief, better sleep, immune wellness, and overall balance.</p>
               <ul class="service-detail-list">
@@ -763,6 +794,7 @@
           acudetox: {
             meta: "Nervous system reset | 45-60 min | Ages 10+",
             title: "Acudetox",
+            url: "services/acudetox.html",
             content: `
               <p>A gentle 5-point ear acupuncture treatment designed to support calm, balance, and nervous system regulation.</p>
               <ul class="service-detail-list">
@@ -778,6 +810,7 @@
         "ear-candling": {
           meta: "Relaxing ear wellness | 30 min | Ages 5+",
           title: "Ear candling",
+          url: "services/ear-candling.html",
           content: `
               <p>A calming wellness service designed for relaxation, gentle warmth, and a peaceful self-care experience.</p>
               <ul class="service-detail-list">
@@ -789,6 +822,7 @@
         "weight-loss": {
           meta: "Medical guidance | Adults 18+",
           title: "Holistic weight loss",
+          url: "services/medical-weight-loss.html",
           content: `
               <p>A personalized weight loss program designed to support appetite control, metabolism, energy, and long-term wellness.</p>
               <ul class="service-detail-list">
@@ -802,7 +836,8 @@
         },
         aesthetics: {
           meta: "Natural refresh | 45-60 min | Adults 18+",
-          title: "Holistic aesthetics",
+          title: "Facial Aesthetics",
+          url: "services/holistic-aesthetics.html",
           content: `
               <p>Natural-looking injectable treatments designed to smooth fine lines, restore volume, and enhance your features without looking overdone.</p>
               <ul class="service-detail-list">
@@ -815,9 +850,24 @@
               </ul>
             `
         },
+        neurotoxin: {
+          meta: "Wrinkle relaxer | 15-30 min | Adults 18+",
+          title: "Neurotoxin treatments",
+          url: "services/neurotoxin.html",
+          content: `
+              <p>Botox-style neurotoxin treatments use precise wrinkle relaxer placement to soften expression lines while keeping your face natural and expressive.</p>
+              <ul class="service-detail-list">
+                <li><strong>Common Areas:</strong> Forehead lines, frown lines, crow's feet, bunny lines, lip flip, brow lift, gummy smile, chin dimpling, and neck bands may be discussed during consultation.</li>
+                <li><strong>Natural-Looking Planning:</strong> Mandy reviews your facial movement, goals, and comfort level before recommending product choice and dosing.</li>
+                <li><strong>Product Options:</strong> Treatment may include options such as Jeuveau or Daxxify depending on your goals, timeline, and provider recommendation.</li>
+                <li><strong>Visit Experience:</strong> Most appointments are brief, with minimal downtime and clear aftercare instructions.</li>
+              </ul>
+            `
+        },
         cryotherapy: {
           meta: "Skin support | Adults 18+",
           title: "Skin lesion removal with cryotherapy",
+          url: "services/cryotherapy-skin-lesion-removal.html",
           content: `
               <p>A focused cold-therapy service for appropriate benign skin concerns after a provider review.</p>
               <ul class="service-detail-list">
@@ -831,6 +881,7 @@
         "hair-restoration": {
           meta: "Hair restoration | Adults 18+",
           title: "Hair restoration with microneedling & exosomes",
+          url: "services/hair-restoration.html",
           content: `
               <p>A scalp-focused treatment designed to support healthier-looking hair and scalp renewal using microneedling with exosome-based topical support.</p>
               <ul class="service-detail-list">
@@ -844,6 +895,7 @@
         "vitamin-injections": {
           meta: "Quick wellness boost | 10-15 min | Adults 18+",
           title: "Vitamin injections",
+          url: "services/vitamin-injections.html",
           content: `
               <p>Quick wellness appointments for clients looking for energy, metabolism, nutrient support, detoxification, immune health, and healthy aging support.</p>
               <ul class="service-detail-list">
@@ -864,6 +916,7 @@
       const title = document.getElementById("service-modal-title");
       const meta = document.getElementById("service-modal-meta");
       const content = document.getElementById("service-modal-content");
+      const pageLink = document.getElementById("service-modal-page-link");
       let lastFocusedElement = null;
       let closeTimer = null;
 
@@ -876,6 +929,7 @@
         meta.textContent = service.meta;
         title.textContent = service.title;
         content.innerHTML = service.content;
+        if (pageLink) pageLink.href = service.url;
         window.clearTimeout(closeTimer);
         modal.setAttribute("aria-hidden", "false");
         document.body.classList.add("modal-open");
@@ -1034,6 +1088,6 @@
         "url": "https://yourhealingseed.com/"
       }
     </script>
-</body>
+<script>document.querySelectorAll(".site-header").forEach(function(header){var button=header.querySelector(".nav-toggle");var nav=header.querySelector(".nav-links");if(!button||!nav)return;if(!nav.id)nav.id="primary-navigation";button.addEventListener("click",function(){var open=header.classList.toggle("is-menu-open");button.setAttribute("aria-expanded",open?"true":"false");button.setAttribute("aria-label",open?"Close menu":"Open menu");});nav.addEventListener("click",function(event){if(event.target.closest("a")){header.classList.remove("is-menu-open");button.setAttribute("aria-expanded","false");button.setAttribute("aria-label","Open menu");}});});</script></body>
 
 </html>
