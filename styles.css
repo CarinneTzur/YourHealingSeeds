@@ -2841,23 +2841,21 @@ a[href^="tel:"] {
 
   .pricing-chapter__toggle {
     align-items: center;
-    background: rgba(102, 185, 155, 0.12);
-    border: 1px solid rgba(47, 111, 95, 0.22);
-    border-radius: 999px;
-    color: var(--moss);
+    background: transparent;
+    border: 0;
+    color: #a18445;
     cursor: pointer;
     display: inline-flex;
     height: 2.75rem;
     justify-content: center;
     margin-top: -0.3rem;
     padding: 0;
-    transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+    transition: color 160ms ease, transform 160ms ease;
     width: 2.75rem;
   }
 
   .pricing-chapter__toggle:hover {
-    background: rgba(102, 185, 155, 0.2);
-    border-color: rgba(47, 111, 95, 0.38);
+    color: #735b28;
   }
 
   .pricing-chapter__toggle:focus-visible {
@@ -2866,13 +2864,13 @@ a[href^="tel:"] {
   }
 
   .pricing-chapter__toggle span {
-    border-bottom: 2px solid currentColor;
-    border-right: 2px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
     display: block;
-    height: 0.62rem;
+    height: 0.48rem;
     transform: rotate(225deg) translate(-0.08rem, -0.08rem);
     transition: transform 180ms ease;
-    width: 0.62rem;
+    width: 0.48rem;
   }
 
   .pricing-chapter__toggle[aria-expanded="false"] span {
