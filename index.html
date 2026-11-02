@@ -14,7 +14,7 @@
   <!-- Preload the main hero image so it appears quicker on first paint -->
   <link rel="preload" href="assets/mandy-wright-clinical.webp" as="image">
   <!-- Main stylesheet for visual layout and custom components -->
-    <link rel="stylesheet" href="styles.css?v=pricing-menu-20261102">
+    <link rel="stylesheet" href="styles.css?v=pricing-menu-final-20261102">
 </head>
 
 <body>
@@ -293,18 +293,12 @@
     </section>
 
     <section class="section pricing-section" id="pricing" aria-labelledby="pricing-title">
-      <div class="pricing-shell" data-pricing-view="menu">
+      <div class="pricing-shell pricing-shell--menu">
         <header class="pricing-intro">
           <div class="section-kicker">Transparent pricing</div>
           <div class="pricing-intro__copy">
             <h2 id="pricing-title">Care, clearly priced.</h2>
             <p>Explore visit, treatment, and package pricing in one simple menu. Your personalized care plan and final cost will always be discussed before treatment.</p>
-            <div class="pricing-view-switcher" role="group" aria-label="Choose pricing layout">
-              <span class="pricing-view-switcher__label">Layout</span>
-              <button type="button" data-pricing-view-option="cards" aria-pressed="false">Cards</button>
-              <button type="button" data-pricing-view-option="menu" aria-pressed="true">Menu</button>
-              <button type="button" data-pricing-view-option="compact" aria-pressed="false">Compact</button>
-            </div>
           </div>
         </header>
 
@@ -1156,37 +1150,6 @@
 
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
-      });
-    })();
-  </script>
-
-  <script>
-    (() => {
-      const shell = document.querySelector("[data-pricing-view]");
-      const controls = Array.from(document.querySelectorAll("[data-pricing-view-option]"));
-      const validViews = new Set(["cards", "menu", "compact"]);
-      if (!shell || !controls.length) return;
-
-      const applyView = (view, persist = true) => {
-        const nextView = validViews.has(view) ? view : "menu";
-        shell.dataset.pricingView = nextView;
-        controls.forEach((control) => {
-          control.setAttribute("aria-pressed", String(control.dataset.pricingViewOption === nextView));
-        });
-        if (!persist) return;
-        try {
-          localStorage.setItem("healingSeedsPricingViewV2", nextView);
-        } catch (_) {}
-      };
-
-      let savedView = "menu";
-      try {
-        savedView = localStorage.getItem("healingSeedsPricingViewV2") || "menu";
-      } catch (_) {}
-      applyView(savedView, false);
-
-      controls.forEach((control) => {
-        control.addEventListener("click", () => applyView(control.dataset.pricingViewOption));
       });
     })();
   </script>
