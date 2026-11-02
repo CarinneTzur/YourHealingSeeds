@@ -587,7 +587,17 @@ p {
 }
 
 .intro-section {
+  background: rgba(246, 238, 234, 0.74);
+  box-shadow: 0 0 0 100vmax rgba(246, 238, 234, 0.38);
+  clip-path: inset(0 -100vmax);
+  max-width: none;
   padding-block: clamp(2.5rem, 3.75vw, 3.5rem);
+}
+
+.intro-section > .section-kicker,
+.intro-section > .intro-grid {
+  margin-inline: auto;
+  max-width: var(--max);
 }
 
 .intro-grid {
