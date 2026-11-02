@@ -14,7 +14,7 @@
   <!-- Preload the main hero image so it appears quicker on first paint -->
   <link rel="preload" href="assets/mandy-wright-clinical.webp" as="image">
   <!-- Main stylesheet for visual layout and custom components -->
-    <link rel="stylesheet" href="styles.css?v=pricing-sidebar-top-20261102">
+  <link rel="stylesheet" href="styles.css?v=pricing-mobile-collapse-20261102">
 </head>
 
 <body>
@@ -323,9 +323,12 @@
                   <h3 id="pricing-wellness-title">Wellness &amp; Restorative Care</h3>
                   <p>Ear-based therapies, recovery treatments, hair restoration, and supportive injections.</p>
                 </div>
+                <button class="pricing-chapter__toggle" type="button" aria-expanded="true" aria-controls="pricing-wellness-content" aria-label="Collapse Wellness and Restorative Care prices" data-pricing-label="Wellness and Restorative Care">
+                  <span aria-hidden="true"></span>
+                </button>
               </header>
 
-              <div class="pricing-chapter__columns">
+              <div class="pricing-chapter__columns" id="pricing-wellness-content">
                 <div class="pricing-column">
                   <section class="menu-group" aria-labelledby="ear-wellness-title">
                     <header class="menu-group__header"><h4 id="ear-wellness-title">Ear &amp; Wellness Services</h4></header>
@@ -392,9 +395,12 @@
                   <h3 id="pricing-aesthetics-title">Facial Aesthetics</h3>
                   <p>Consultation, skin renewal, injectables, fillers, threads, and full-face treatment planning.</p>
                 </div>
+                <button class="pricing-chapter__toggle" type="button" aria-expanded="true" aria-controls="pricing-aesthetics-content" aria-label="Collapse Facial Aesthetics prices" data-pricing-label="Facial Aesthetics">
+                  <span aria-hidden="true"></span>
+                </button>
               </header>
 
-              <div class="pricing-chapter__columns">
+              <div class="pricing-chapter__columns" id="pricing-aesthetics-content">
                 <div class="pricing-column">
                   <section class="menu-group" aria-labelledby="skin-services-title">
                     <header class="menu-group__header"><h4 id="skin-services-title">Consultation &amp; SkinPen</h4><span>Skin services</span></header>
@@ -440,9 +446,12 @@
                   <h3 id="pricing-medical-title">Medical Care</h3>
                   <p>Visit pricing for weight-loss and peptide support, primary care, and hormone replacement therapy.</p>
                 </div>
+                <button class="pricing-chapter__toggle" type="button" aria-expanded="true" aria-controls="pricing-medical-content" aria-label="Collapse Medical Care prices" data-pricing-label="Medical Care">
+                  <span aria-hidden="true"></span>
+                </button>
               </header>
 
-              <div class="pricing-chapter__columns">
+              <div class="pricing-chapter__columns" id="pricing-medical-content">
                 <div class="pricing-column">
                   <section class="menu-group" aria-labelledby="weight-loss-title">
                     <header class="menu-group__header"><h4 id="weight-loss-title">Weight Loss &amp; Peptides</h4><span>Visits &amp; medication</span></header>
@@ -1150,6 +1159,50 @@
 
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
+      });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const mobilePricing = window.matchMedia("(max-width: 720px)");
+      const toggles = Array.from(document.querySelectorAll(".pricing-chapter__toggle"));
+
+      if (!toggles.length) return;
+
+      const setExpanded = (button, expanded) => {
+        const content = document.getElementById(button.getAttribute("aria-controls"));
+        const chapter = button.closest(".pricing-chapter");
+        const label = button.dataset.pricingLabel || "Pricing";
+
+        if (!content || !chapter) return;
+
+        button.setAttribute("aria-expanded", String(expanded));
+        button.setAttribute("aria-label", `${expanded ? "Collapse" : "Expand"} ${label} prices`);
+        content.hidden = !expanded;
+        chapter.classList.toggle("is-collapsed", !expanded);
+      };
+
+      toggles.forEach((button) => {
+        setExpanded(button, true);
+        button.addEventListener("click", () => {
+          if (!mobilePricing.matches) return;
+          setExpanded(button, button.getAttribute("aria-expanded") !== "true");
+        });
+      });
+
+      document.querySelectorAll('.pricing-index__nav a[href^="#pricing-"]').forEach((link) => {
+        link.addEventListener("click", () => {
+          if (!mobilePricing.matches) return;
+          const chapter = document.querySelector(link.getAttribute("href"));
+          const button = chapter?.querySelector(".pricing-chapter__toggle");
+          if (button) setExpanded(button, true);
+        });
+      });
+
+      mobilePricing.addEventListener("change", (event) => {
+        if (event.matches) return;
+        toggles.forEach((button) => setExpanded(button, true));
       });
     })();
   </script>
