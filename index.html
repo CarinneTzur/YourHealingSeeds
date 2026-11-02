@@ -41,16 +41,16 @@
       <details class="nav-dropdown">
         <summary>Services</summary>
         <nav class="nav-menu services-navigation" aria-label="Services">
-          <a href="/services">All Services</a>
-          <a href="/acudetox-1">Acudetox</a>
-          <a href="/services/auriculotherapy-ear-seeds">Auriculotherapy &amp; Ear Seeds</a>
-          <a href="/services/ear-candling">Ear Candling</a>
-          <a href="/services/hair-restoration">Hair Restoration</a>
-          <a href="/services/neurotoxin">Neurotoxin</a>
-          <a href="/services/facial-aesthetics">Facial Aesthetics</a>
-          <a href="/services/medical-weight-loss">Medical Weight Loss</a>
-          <a href="/services/cryotherapy">Cryotherapy</a>
-          <a href="/services/vitamin-injections">Vitamin Injections</a>
+          <a href="/YourHealingSeeds/services">All Services</a>
+          <a href="/YourHealingSeeds/acudetox-1">Acudetox</a>
+          <a href="/YourHealingSeeds/services/auriculotherapy-ear-seeds">Auriculotherapy &amp; Ear Seeds</a>
+          <a href="/YourHealingSeeds/services/ear-candling">Ear Candling</a>
+          <a href="/YourHealingSeeds/services/hair-restoration">Hair Restoration</a>
+          <a href="/YourHealingSeeds/services/neurotoxin">Neurotoxin</a>
+          <a href="/YourHealingSeeds/services/facial-aesthetics">Facial Aesthetics</a>
+          <a href="/YourHealingSeeds/services/medical-weight-loss">Medical Weight Loss</a>
+          <a href="/YourHealingSeeds/services/cryotherapy">Cryotherapy</a>
+          <a href="/YourHealingSeeds/services/vitamin-injections">Vitamin Injections</a>
         </nav>
       </details>
       <a href="#pricing">Pricing</a>
@@ -890,7 +890,7 @@
         auriculotherapy: {
           meta: "Auriculotherapy & Ear Seeds | 15-30 min | Ages 5+",
           title: "Auriculotherapy & Ear Seeds",
-          url: "/services/auriculotherapy-ear-seeds",
+          url: "/YourHealingSeeds/services/auriculotherapy-ear-seeds",
           content: `
               <p>A gentle ear therapy treatment that combines electrical point stimulation with ear seed placement to support stress relief, better sleep, immune wellness, and overall balance.</p>
               <ul class="service-detail-list">
@@ -905,7 +905,7 @@
           acudetox: {
             meta: "Nervous system reset | 45-60 min | Ages 10+",
             title: "Acudetox",
-            url: "/acudetox-1",
+            url: "/YourHealingSeeds/acudetox-1",
             content: `
               <p>A gentle 5-point ear acupuncture treatment designed to support calm, balance, and nervous system regulation.</p>
               <ul class="service-detail-list">
@@ -921,7 +921,7 @@
         "ear-candling": {
           meta: "Relaxing ear wellness | 30 min | Ages 5+",
           title: "Ear candling",
-          url: "/services/ear-candling",
+          url: "/YourHealingSeeds/services/ear-candling",
           content: `
               <p>A calming wellness service designed for relaxation, gentle warmth, and a peaceful self-care experience.</p>
               <ul class="service-detail-list">
@@ -933,7 +933,7 @@
         "weight-loss": {
           meta: "Medical guidance | Adults 18+",
           title: "Holistic weight loss",
-          url: "/services/medical-weight-loss",
+          url: "/YourHealingSeeds/services/medical-weight-loss",
           content: `
               <p>A personalized weight loss program designed to support appetite control, metabolism, energy, and long-term wellness.</p>
               <ul class="service-detail-list">
@@ -948,7 +948,7 @@
         aesthetics: {
           meta: "Natural refresh | 45-60 min | Adults 18+",
           title: "Facial Aesthetics",
-          url: "/services/facial-aesthetics",
+          url: "/YourHealingSeeds/services/facial-aesthetics",
           content: `
               <p>Natural-looking injectable treatments designed to smooth fine lines, restore volume, and enhance your features without looking overdone.</p>
               <ul class="service-detail-list">
@@ -964,7 +964,7 @@
         neurotoxin: {
           meta: "Wrinkle relaxer | 15-30 min | Adults 18+",
           title: "Neurotoxin treatments",
-          url: "/services/neurotoxin",
+          url: "/YourHealingSeeds/services/neurotoxin",
           content: `
               <p>Botox-style neurotoxin treatments use precise wrinkle relaxer placement to soften expression lines while keeping your face natural and expressive.</p>
               <ul class="service-detail-list">
@@ -978,7 +978,7 @@
         cryotherapy: {
           meta: "Skin support | Adults 18+",
           title: "Skin lesion removal with cryotherapy",
-          url: "/services/cryotherapy",
+          url: "/YourHealingSeeds/services/cryotherapy",
           content: `
               <p>A focused cold-therapy service for appropriate benign skin concerns after a provider review.</p>
               <ul class="service-detail-list">
@@ -992,7 +992,7 @@
         "hair-restoration": {
           meta: "Hair restoration | Adults 18+",
           title: "Hair restoration with microneedling & exosomes",
-          url: "/services/hair-restoration",
+          url: "/YourHealingSeeds/services/hair-restoration",
           content: `
               <p>A scalp-focused treatment designed to support healthier-looking hair and scalp renewal using microneedling with exosome-based topical support.</p>
               <ul class="service-detail-list">
@@ -1006,7 +1006,7 @@
         "vitamin-injections": {
           meta: "Quick wellness boost | 10-15 min | Adults 18+",
           title: "Vitamin injections",
-          url: "/services/vitamin-injections",
+          url: "/YourHealingSeeds/services/vitamin-injections",
           content: `
               <p>Quick wellness appointments for clients looking for energy, metabolism, nutrient support, detoxification, immune health, and healthy aging support.</p>
               <ul class="service-detail-list">
@@ -1202,3 +1202,5 @@
 <script>document.querySelectorAll(".site-header").forEach(function(header){var button=header.querySelector(".nav-toggle");var nav=header.querySelector(".nav-links");if(!button||!nav)return;if(!nav.id)nav.id="primary-navigation";button.addEventListener("click",function(){var open=header.classList.toggle("is-menu-open");button.setAttribute("aria-expanded",open?"true":"false");button.setAttribute("aria-label",open?"Close menu":"Open menu");});nav.addEventListener("click",function(event){if(event.target.closest("a")){header.classList.remove("is-menu-open");button.setAttribute("aria-expanded","false");button.setAttribute("aria-label","Open menu");}});});</script><script>if(location.protocol==="file:"){(function(){var path=location.pathname.split("\\").join("/");var marker="/HealingSeeds/";var root=path.indexOf(marker)>-1?path.slice(0,path.indexOf(marker)+marker.length):path.replace(/(?:index[.]html|services[/][^/]+(?:[/]index[.]html|[.]html)|acudetox-1[/]index[.]html).*$/,"");document.querySelectorAll('a[href^="/"]').forEach(function(link){var href=link.getAttribute("href");var hash="";var hashIndex=href.indexOf("#");if(hashIndex>-1){hash=href.slice(hashIndex);href=href.slice(0,hashIndex);}var target=href.replace(/^[/]+/,"");if(href==="/services"){target="index.html";hash=hash||"#services";}else if(href.indexOf("/services/")===0){target="services/"+href.slice(10)+"/index.html";}else if(href==="/acudetox-1"){target="acudetox-1/index.html";}link.setAttribute("href","file://"+root+target+hash);});})();}</script></body>
 
 </html>
+
+
