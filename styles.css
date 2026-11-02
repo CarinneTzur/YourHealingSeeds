@@ -505,14 +505,14 @@ main > section {
   position: relative;
 }
 
-main > .section:nth-of-type(odd):not(.services-section):not(.visit-section):not(.faq-section):not(.contact-section) {
+main > .section:nth-of-type(odd):not(.intro-section):not(.services-section):not(.visit-section):not(.faq-section):not(.contact-section) {
   background:
     linear-gradient(135deg, rgba(255, 253, 252, 0.78), rgba(246, 238, 234, 0.5));
   box-shadow: 0 0 0 100vmax rgba(255, 253, 252, 0.52);
   clip-path: inset(0 -100vmax);
 }
 
-main > .section:nth-of-type(even):not(.services-section):not(.visit-section):not(.faq-section):not(.contact-section) {
+main > .section:nth-of-type(even):not(.intro-section):not(.services-section):not(.visit-section):not(.faq-section):not(.contact-section) {
   background:
     linear-gradient(135deg, rgba(246, 238, 234, 0.56), rgba(255, 253, 252, 0.7));
   box-shadow: 0 0 0 100vmax rgba(246, 238, 234, 0.28);
