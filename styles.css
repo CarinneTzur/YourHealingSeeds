@@ -3127,6 +3127,10 @@ a[href^="tel:"] {
 }
 
 @media (max-width: 620px) {
+  html {
+    font-size: 90%;
+  }
+
   .site-header {
     padding: 0.65rem 1rem;
   }
@@ -3191,7 +3195,7 @@ a[href^="tel:"] {
   }
 
   .service-hero__copy h1 {
-    font-size: 2.35rem;
+    font-size: 2.1rem;
   }
 
   .service-hero__image {
@@ -3237,7 +3241,7 @@ a[href^="tel:"] {
   }
 
   .hero h1 {
-    font-size: clamp(2.7rem, 12.8vw, 3.75rem);
+    font-size: clamp(2.55rem, 10.6vw, 3.35rem);
     max-width: 9.5ch;
   }
 
@@ -3258,7 +3262,22 @@ a[href^="tel:"] {
   }
 
   h2 {
-    font-size: clamp(1.75rem, 8vw, 2.35rem);
+    font-size: clamp(1.65rem, 6.8vw, 2.1rem);
+  }
+
+  button,
+  summary,
+  .button,
+  .header-cta,
+  .nav-toggle,
+  .pricing-chapter__toggle {
+    min-height: 44px;
+  }
+
+  .nav-toggle,
+  .pricing-chapter__toggle,
+  .service-modal__close {
+    min-width: 44px;
   }
 
   summary {
