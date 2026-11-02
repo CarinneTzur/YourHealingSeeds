@@ -600,6 +600,10 @@ p {
   max-width: var(--max);
 }
 
+.intro-section > .section-kicker {
+  margin-bottom: 1.1rem;
+}
+
 .intro-grid {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -617,7 +621,7 @@ p {
 
 .intro-grid p {
   font-size: 1rem;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
 }
 
 .intro-note {
