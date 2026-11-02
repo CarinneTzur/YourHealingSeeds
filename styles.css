@@ -2332,22 +2332,6 @@ a[href^="tel:"] {
   max-width: 50rem;
 }
 
-.pricing-intro h2 {
-  font-size: clamp(2.9rem, 6vw, 5.25rem);
-  letter-spacing: -0.045em;
-  line-height: 0.94;
-  margin: 0;
-  max-width: 10ch;
-}
-
-.pricing-intro p {
-  color: var(--muted);
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
-  line-height: 1.75;
-  margin: 1.25rem 0 0;
-  max-width: 43rem;
-}
-
 .pricing-editorial {
   align-items: start;
   display: grid;
@@ -2888,10 +2872,6 @@ a[href^="tel:"] {
 }
 
 @media (max-width: 480px) {
-  .pricing-intro h2 {
-    font-size: clamp(2.75rem, 15vw, 4rem);
-  }
-
   .pricing-chapter {
     padding: 1.65rem 1.25rem;
   }
