@@ -602,7 +602,7 @@ p {
 }
 
 .intro-grid h2 {
-  font-size: clamp(1.65rem, 2.3vw, 2.15rem);
+  font-size: clamp(1.45rem, 1.75vw, 1.75rem);
 }
 
 .intro-grid p {
