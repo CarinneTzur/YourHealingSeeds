@@ -2435,20 +2435,11 @@ a[href^="tel:"] {
   font-family: var(--display);
   font-size: 1.03rem;
   font-weight: 760;
-  gap: 0.75rem;
-  grid-template-columns: 1.25rem minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   line-height: 1.25;
   padding: 0.9rem 0;
   text-decoration: none;
   transition: color 160ms ease, padding-left 160ms ease;
-}
-
-.pricing-index__nav a span {
-  color: #9a8150;
-  font-family: var(--body);
-  font-size: 0.62rem;
-  font-weight: 850;
-  letter-spacing: 0.08em;
 }
 
 .pricing-index__nav a:hover,
@@ -2634,13 +2625,10 @@ a[href^="tel:"] {
 }
 
 #pricing-aesthetics .pricing-chapter__header h3,
-#pricing-aesthetics .menu-group__header h4 {
-  color: var(--coral);
-}
-
+#pricing-aesthetics .menu-group__header h4,
 #pricing-medical .pricing-chapter__header h3,
 #pricing-medical .menu-group__header h4 {
-  color: var(--blue);
+  color: var(--moss);
 }
 
 #pricing-aesthetics .menu-group__header {
@@ -2690,16 +2678,6 @@ a[href^="tel:"] {
   margin-left: 0.12rem;
 }
 
-.menu-row__prefix {
-  color: var(--muted);
-  flex-basis: 100%;
-  font-size: 0.61rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.25rem;
-  text-transform: uppercase;
-}
-
 .menu-row__saving {
   align-items: center;
   background: rgba(184, 163, 109, 0.16);
@@ -2738,6 +2716,27 @@ a[href^="tel:"] {
 
 .pricing-section ~ .about-section > .section-kicker {
   margin-bottom: 0;
+}
+
+/* Menu layout: keep the editorial structure while reducing oversized gaps. */
+.pricing-shell[data-pricing-view="menu"] .pricing-intro {
+  margin-bottom: clamp(1.75rem, 3vw, 2.6rem);
+}
+
+.pricing-shell[data-pricing-view="menu"] .pricing-chapter {
+  padding: clamp(1.55rem, 3vw, 2.6rem);
+}
+
+.pricing-shell[data-pricing-view="menu"] .pricing-chapter__header {
+  margin-bottom: clamp(1.3rem, 2.4vw, 1.9rem);
+}
+
+.pricing-shell[data-pricing-view="menu"] .pricing-chapter__columns {
+  gap: clamp(1.6rem, 3.5vw, 2.8rem);
+}
+
+.pricing-shell[data-pricing-view="menu"] .menu-group + .menu-group {
+  margin-top: clamp(1.35rem, 2.6vw, 1.9rem);
 }
 
 /* Card layout: independent content stacks prevent short groups from stretching. */

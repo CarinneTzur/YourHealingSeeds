@@ -293,7 +293,7 @@
     </section>
 
     <section class="section pricing-section" id="pricing" aria-labelledby="pricing-title">
-      <div class="pricing-shell" data-pricing-view="cards">
+      <div class="pricing-shell" data-pricing-view="menu">
         <header class="pricing-intro">
           <div class="section-kicker">Transparent pricing</div>
           <div class="pricing-intro__copy">
@@ -301,8 +301,8 @@
             <p>Explore visit, treatment, and package pricing in one simple menu. Your personalized care plan and final cost will always be discussed before treatment.</p>
             <div class="pricing-view-switcher" role="group" aria-label="Choose pricing layout">
               <span class="pricing-view-switcher__label">Layout</span>
-              <button type="button" data-pricing-view-option="cards" aria-pressed="true">Cards</button>
-              <button type="button" data-pricing-view-option="menu" aria-pressed="false">Menu</button>
+              <button type="button" data-pricing-view-option="cards" aria-pressed="false">Cards</button>
+              <button type="button" data-pricing-view-option="menu" aria-pressed="true">Menu</button>
               <button type="button" data-pricing-view-option="compact" aria-pressed="false">Compact</button>
             </div>
           </div>
@@ -312,9 +312,9 @@
           <aside class="pricing-index" aria-label="Pricing menu">
             <p class="pricing-index__eyebrow">Pricing menu</p>
             <nav class="pricing-index__nav" aria-label="Pricing categories">
-              <a href="#pricing-wellness"><span>01</span>Wellness &amp; restorative</a>
-              <a href="#pricing-aesthetics"><span>02</span>Facial aesthetics</a>
-              <a href="#pricing-medical"><span>03</span>Medical care</a>
+              <a href="#pricing-wellness">Wellness &amp; restorative</a>
+              <a href="#pricing-aesthetics">Facial aesthetics</a>
+              <a href="#pricing-medical">Medical care</a>
             </nav>
             <div class="pricing-index__footer">
               <p><span aria-hidden="true"></span>Package savings are noted in gold.</p>
@@ -455,7 +455,7 @@
                     <dl class="menu-list">
                       <div class="menu-row"><dt><span class="menu-row__name">Initial visit</span></dt><dd><strong>$75</strong></dd></div>
                       <div class="menu-row"><dt><span class="menu-row__name">Follow-up visit</span></dt><dd><strong>$35</strong></dd></div>
-                      <div class="menu-row"><dt><span class="menu-row__name">Weight-loss medication</span></dt><dd><span class="menu-row__prefix">From</span><strong>$150</strong><span class="menu-row__unit">/month</span></dd></div>
+                      <div class="menu-row"><dt><span class="menu-row__name">Weight-loss medication</span><span class="menu-row__meta">Starting at</span></dt><dd><strong>$150</strong><span class="menu-row__unit">/month</span></dd></div>
                     </dl>
                   </section>
                 </div>
@@ -1168,20 +1168,20 @@
       if (!shell || !controls.length) return;
 
       const applyView = (view, persist = true) => {
-        const nextView = validViews.has(view) ? view : "cards";
+        const nextView = validViews.has(view) ? view : "menu";
         shell.dataset.pricingView = nextView;
         controls.forEach((control) => {
           control.setAttribute("aria-pressed", String(control.dataset.pricingViewOption === nextView));
         });
         if (!persist) return;
         try {
-          localStorage.setItem("healingSeedsPricingView", nextView);
+          localStorage.setItem("healingSeedsPricingViewV2", nextView);
         } catch (_) {}
       };
 
-      let savedView = "cards";
+      let savedView = "menu";
       try {
-        savedView = localStorage.getItem("healingSeedsPricingView") || "cards";
+        savedView = localStorage.getItem("healingSeedsPricingViewV2") || "menu";
       } catch (_) {}
       applyView(savedView, false);
 
